@@ -8,16 +8,26 @@
 import SwiftUI
 import FirebaseCore
 import Firebase
+import GoogleSignIn
 /*
  Firebase 초기화
  */
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
 
-    return true
+      print("firebase init")
+      FirebaseApp.configure()
+//      GIDSignIn.sharedInstance = FirebaseApp.app()?.options.clientID
+//      GIDSignIn.sharedInstance.delegate = self
+      return true
   }
+    
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
+    }
 }
 
 

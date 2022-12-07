@@ -11,7 +11,6 @@
 		EE3D10742940019E0010181B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10732940019E0010181B /* ContentView.swift */; };
 		EE3D10762940019E0010181B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10752940019E0010181B /* Assets.xcassets */; };
 		EE3D107A2940019E0010181B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10792940019E0010181B /* Preview Assets.xcassets */; };
-		EE3D1084294009710010181B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3D1083294009710010181B /* GoogleService-Info.plist */; };
 		EE3D108729400A800010181B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EE3D108629400A800010181B /* FirebaseAnalytics */; };
 		EE3D108929400A800010181B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE3D108829400A800010181B /* FirebaseAuth */; };
 		EE3D108B29400A800010181B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = EE3D108A29400A800010181B /* FirebaseCrashlytics */; };
@@ -27,6 +26,9 @@
 		EE3D10A9294022010010181B /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10A8294022010010181B /* GoogleSignInButton.swift */; };
 		EE3D10AE294025E80010181B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10AD294025E80010181B /* HomeView.swift */; };
 		EE3D10B0294027E00010181B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10AF294027E00010181B /* LoginView.swift */; };
+		EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10B1294030730010181B /* GoogleService-Info.plist */; };
+		EE60238529405FC300472CD2 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238429405FC300472CD2 /* BoardListView.swift */; };
+		EE6023882940684400472CD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6023872940684400472CD2 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,6 @@
 		EE3D10752940019E0010181B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE3D10772940019E0010181B /* Incaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Incaze.entitlements; sourceTree = "<group>"; };
 		EE3D10792940019E0010181B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EE3D1083294009710010181B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE3D1095294010FB0010181B /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		EE3D1099294011920010181B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		EE3D109B294015910010181B /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		EE3D10A8294022010010181B /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		EE3D10AD294025E80010181B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EE3D10AF294027E00010181B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EE3D10B1294030730010181B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE60238429405FC300472CD2 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
+		EE6023872940684400472CD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,7 @@
 				EE3D10712940019E0010181B /* IncazeApp.swift */,
 				EE3D10732940019E0010181B /* ContentView.swift */,
 				EE3D10752940019E0010181B /* Assets.xcassets */,
-				EE3D1083294009710010181B /* GoogleService-Info.plist */,
+				EE3D10B1294030730010181B /* GoogleService-Info.plist */,
 				EE3D10772940019E0010181B /* Incaze.entitlements */,
 				EE3D10782940019E0010181B /* Preview Content */,
 			);
@@ -110,6 +114,7 @@
 		EE3D1080294005EF0010181B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE6023862940683A00472CD2 /* Model */,
 				EE3D10A229401B8E0010181B /* View */,
 				EE3D1097294011730010181B /* Services */,
 				EE3D1094294010E30010181B /* DI */,
@@ -159,6 +164,8 @@
 		EE3D10A229401B8E0010181B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EE60238329405F8600472CD2 /* Board */,
+				EE3D10AA294025A80010181B /* Home */,
 				EE3D10A329401BA10010181B /* Onboarding */,
 			);
 			path = View;
@@ -167,7 +174,6 @@
 		EE3D10A329401BA10010181B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				EE3D10AA294025A80010181B /* Home */,
 				EE3D10A429401BB00010181B /* Login */,
 			);
 			path = Onboarding;
@@ -197,6 +203,22 @@
 				EE3D10AD294025E80010181B /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		EE60238329405F8600472CD2 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				EE60238429405FC300472CD2 /* BoardListView.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		EE6023862940683A00472CD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE6023872940684400472CD2 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +295,7 @@
 			files = (
 				EE3D107A2940019E0010181B /* Preview Assets.xcassets in Resources */,
 				EE3D10762940019E0010181B /* Assets.xcassets in Resources */,
-				EE3D1084294009710010181B /* GoogleService-Info.plist in Resources */,
+				EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE3D109C294015910010181B /* GoogleAuthService.swift in Sources */,
+				EE60238529405FC300472CD2 /* BoardListView.swift in Sources */,
 				EE3D1096294010FB0010181B /* ServiceProvider.swift in Sources */,
 				EE3D10A629401BD50010181B /* LoginViewModel.swift in Sources */,
 				EE3D10B0294027E00010181B /* LoginView.swift in Sources */,
@@ -293,6 +316,7 @@
 				EE3D10AE294025E80010181B /* HomeView.swift in Sources */,
 				EE3D109A294011920010181B /* AuthService.swift in Sources */,
 				EE3D10A9294022010010181B /* GoogleSignInButton.swift in Sources */,
+				EE6023882940684400472CD2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +456,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -440,7 +464,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eigenjm.Incaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,7 +497,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -479,7 +505,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eigenjm.Incaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
