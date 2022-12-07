@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
-
+import Firebase
 /*
  Firebase 초기화
  */
@@ -24,13 +24,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 
 struct IncazeApp: App {// 앱 수명 주기 관리를 위한 AppDelegate와 SceneDelegate를 대체하는 App 프로토콜
-    
+    @StateObject var loginViewModel = LoginViewModel()
     // register app delegate for Firebase setup
-      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(loginViewModel)
         }
     }
 }

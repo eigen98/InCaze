@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @EnvironmentObject var viewModel : LoginViewModel
     @State private var username = ""
     @State private var password = ""
     
     var body: some View {
-        VStack {
-                   TextField("Username", text: $username)
-                       .padding()
-                   SecureField("Password", text: $password)
-                       .padding()
-                   Button(action: login) {
-                       Text("Login")
-                   }
-               }
+        
+            
+        switch viewModel.state {
+            case .login : HomeView()
+            case .logout : LoginView()
+            case .unregistered:
+            LoginView()
+        }
     }
     
     func login() {
-            // Perform login here
-        }
+        // Perform login here
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
