@@ -8,32 +8,42 @@
 import SwiftUI
 
 struct BoardListView: View {
+    @ObservedObject var viewModel : BoardListViewModel = BoardListViewModel()
     @State private var items: [Item] = []
-        @State private var newItem = Item()
+    @State private var newItem = Item()
 
         var body: some View {
             VStack {
                 List {
-                    ForEach(items, id: \.id) { item in
+                    ForEach(viewModel.rooms, id: \.id) { item in
 //                        Card {
                             VStack(alignment: .leading) {
-                                Text(item.name)
+                                Text(item.title)
                                     .font(.headline)
-                                Text(item.price)
+                                Text(item.contents)
                                     .font(.subheadline)
-                                Text(item.description)
-//                            }
-                        }
+                                Text("\(item.memberCount)/\(item.limitMember)")
+                            }
+//                        }
                     }
-                }
+                }.onAppear(perform: {
+                    viewModel.observeItemList()
+                })
 
                 Form {
                     TextField("Item name", text: $newItem.name)
                     TextField("Item price", text: $newItem.price)
                     TextField("Item description", text: $newItem.description)
                     Button("Sell") {
-                        self.items.append(self.newItem)
-                        self.newItem = Item()
+                        var userid = UserManager.shared.userId
+                        var newRoom = Room(id: userid ,
+                                           title: newItem.name,
+                                           contents: newItem.description,
+                                           userId: userid,
+                                           limitMember: 2,
+                                           memberCount: 1,
+                                           partyIds: [Int(userid) ?? 0 ])
+                        viewModel.createRoom(room: newRoom)
                     }
                 }
                 .padding()
@@ -50,6 +60,6 @@ struct BoardListView: View {
 
 struct BoardListView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardListView()
+        BoardListView(viewModel: BoardListViewModel())
     }
 }

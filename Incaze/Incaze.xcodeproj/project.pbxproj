@@ -27,8 +27,13 @@
 		EE3D10AE294025E80010181B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10AD294025E80010181B /* HomeView.swift */; };
 		EE3D10B0294027E00010181B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10AF294027E00010181B /* LoginView.swift */; };
 		EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10B1294030730010181B /* GoogleService-Info.plist */; };
+		EE43B8D62941A7FB006F5113 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D52941A7FB006F5113 /* Key.swift */; };
+		EE43B8D82941A834006F5113 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D72941A834006F5113 /* UserManager.swift */; };
 		EE60238529405FC300472CD2 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238429405FC300472CD2 /* BoardListView.swift */; };
 		EE6023882940684400472CD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6023872940684400472CD2 /* User.swift */; };
+		EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE602389294080B100472CD2 /* BoardListViewModel.swift */; };
+		EE60238C2940870B00472CD2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238B2940870B00472CD2 /* Room.swift */; };
+		EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEE2A4EE2941B0810050B91E /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +52,12 @@
 		EE3D10AD294025E80010181B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EE3D10AF294027E00010181B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EE3D10B1294030730010181B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE43B8D52941A7FB006F5113 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		EE43B8D72941A834006F5113 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		EE60238429405FC300472CD2 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		EE6023872940684400472CD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EE602389294080B100472CD2 /* BoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewModel.swift; sourceTree = "<group>"; };
+		EE60238B2940870B00472CD2 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */,
 				EE3D108F29400A800010181B /* FirebaseDatabaseSwift in Frameworks */,
 				EE3D10A02940199E0010181B /* GoogleSignIn in Frameworks */,
 				EE3D108B29400A800010181B /* FirebaseCrashlytics in Frameworks */,
@@ -89,6 +99,7 @@
 		EE3D10702940019E0010181B /* Incaze */ = {
 			isa = PBXGroup;
 			children = (
+				EE43B8D42941A5E1006F5113 /* Configuration */,
 				EE3D10A129401B5D0010181B /* Info.plist */,
 				EE3D1082294006290010181B /* Shared */,
 				EE3D1081294005F90010181B /* WatchOS */,
@@ -205,10 +216,20 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		EE43B8D42941A5E1006F5113 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				EE43B8D52941A7FB006F5113 /* Key.swift */,
+				EE43B8D72941A834006F5113 /* UserManager.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		EE60238329405F8600472CD2 /* Board */ = {
 			isa = PBXGroup;
 			children = (
 				EE60238429405FC300472CD2 /* BoardListView.swift */,
+				EE602389294080B100472CD2 /* BoardListViewModel.swift */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -217,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				EE6023872940684400472CD2 /* User.swift */,
+				EE60238B2940870B00472CD2 /* Room.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +268,7 @@
 				EE3D109029400A800010181B /* FirebaseFirestore */,
 				EE3D109229400A800010181B /* FirebaseMessaging */,
 				EE3D109F2940199E0010181B /* GoogleSignIn */,
+				EEE2A4EE2941B0810050B91E /* KeychainSwift */,
 			);
 			productName = Incaze;
 			productReference = EE3D106E2940019E0010181B /* Incaze.app */;
@@ -278,6 +301,7 @@
 			packageReferences = (
 				EE3D108529400A800010181B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				EE3D109E2940199E0010181B /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */,
+				EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = EE3D106F2940019E0010181B /* Products */;
 			projectDirPath = "";
@@ -309,10 +333,14 @@
 				EE3D109C294015910010181B /* GoogleAuthService.swift in Sources */,
 				EE60238529405FC300472CD2 /* BoardListView.swift in Sources */,
 				EE3D1096294010FB0010181B /* ServiceProvider.swift in Sources */,
+				EE43B8D82941A834006F5113 /* UserManager.swift in Sources */,
 				EE3D10A629401BD50010181B /* LoginViewModel.swift in Sources */,
 				EE3D10B0294027E00010181B /* LoginView.swift in Sources */,
 				EE3D10742940019E0010181B /* ContentView.swift in Sources */,
+				EE60238C2940870B00472CD2 /* Room.swift in Sources */,
+				EE43B8D62941A7FB006F5113 /* Key.swift in Sources */,
 				EE3D10722940019E0010181B /* IncazeApp.swift in Sources */,
+				EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */,
 				EE3D10AE294025E80010181B /* HomeView.swift in Sources */,
 				EE3D109A294011920010181B /* AuthService.swift in Sources */,
 				EE3D10A9294022010010181B /* GoogleSignInButton.swift in Sources */,
@@ -542,8 +570,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.3.0;
 			};
 		};
 		EE3D109E2940199E0010181B /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */ = {
@@ -552,6 +580,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.0.0;
+			};
+		};
+		EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -596,6 +632,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE3D109E2940199E0010181B /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
 			productName = GoogleSignIn;
+		};
+		EEE2A4EE2941B0810050B91E /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

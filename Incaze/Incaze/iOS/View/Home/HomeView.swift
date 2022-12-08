@@ -33,6 +33,10 @@ struct HomeView: View {
             
             Text(user?.profile?.email ?? "")
               .font(.subheadline)
+              
+              NavigationLink(destination: BoardListView(), label: {
+                  Text("이동")
+              })
           }
           
           Spacer()
@@ -42,6 +46,9 @@ struct HomeView: View {
         .background(Color(.secondarySystemBackground))
         .cornerRadius(12)
         .padding()
+        .onTapGesture {
+            
+        }
         
         Spacer()
         

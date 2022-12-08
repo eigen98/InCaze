@@ -30,6 +30,7 @@ class LoginViewModel : ObservableObject {
     public func userExists(with email: String,
                            completion: @escaping ((Bool)-> Void)) {
         var email = LoginViewModel.safeEmail(emailAddress: email)
+        UserManager.shared.userId = "\(LoginViewModel.safeEmail(emailAddress: email))"
         userRef.child(email).observeSingleEvent(of: .value) { snapshot in
             guard snapshot.value as? String != nil else {
                 completion(false)
@@ -47,6 +48,7 @@ class LoginViewModel : ObservableObject {
     func addUser(email: String) {
         let date = Date()
         let userRef = userRef.child("\(LoginViewModel.safeEmail(emailAddress: email))")
+        UserManager.shared.userId = "\(LoginViewModel.safeEmail(emailAddress: email))"
         let newUser = [
             "id" : "\(LoginViewModel.safeEmail(emailAddress: email))",
             "email": email,
