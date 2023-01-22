@@ -22,6 +22,42 @@ class UserManager {
         }
     }
     
+    var email: String {
+        get {
+            return KeychainSwift().get("email") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "email")
+        }
+    }
+    
+    var id: String {
+        get {
+            return KeychainSwift().get("id") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "id")
+        }
+    }
+    
+    var image: String {
+        get {
+            return KeychainSwift().get("image") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "image")
+        }
+    }
+    
+    /*
+     email database id 형식으로 변환
+     */
+    func safeEmail(emailAddress: String) -> String {
+        var safeEmail = emailAddress.replacingOccurrences(of: "@", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: ".", with: "-")
+        return safeEmail
+    }
+    
     var mode : String {// V (Visitor) / M (Member)
         get {
             return KeychainSwift().get("mode") ?? ""
@@ -31,14 +67,6 @@ class UserManager {
         }
     }
     
-    var userId: String {
-        get {
-            return KeychainSwift().get("userId") ?? ""
-        }
-        set {
-            KeychainSwift().set(newValue, forKey: "userId")
-        }
-    }
     
     var fullLocation: String { // 동네 이름 전체 (ex. 서울 동작구 노량진1동)
         get {

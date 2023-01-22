@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import HealthKit
 struct LoginView: View {
 
   // 1
@@ -21,7 +21,9 @@ struct LoginView: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
 
-      Text("Welcome to Ellifit!")
+    
+        
+      Text("Welcome to Incaze!")
         .fontWeight(.black)
         .foregroundColor(Color(.systemIndigo))
         .font(.largeTitle)

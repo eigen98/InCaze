@@ -16,9 +16,6 @@ class LoginViewModel : ObservableObject {
     private var databaseRef: DatabaseReference!
     private var userRef: DatabaseReference!
 
-    
-    
-    
     init() {
         databaseRef = Database.database().reference()
         userRef = databaseRef.child("User")
@@ -30,7 +27,7 @@ class LoginViewModel : ObservableObject {
     public func userExists(with email: String,
                            completion: @escaping ((Bool)-> Void)) {
         var email = LoginViewModel.safeEmail(emailAddress: email)
-        UserManager.shared.userId = "\(LoginViewModel.safeEmail(emailAddress: email))"
+        UserManager.shared.id = "\(LoginViewModel.safeEmail(emailAddress: email))"
         userRef.child(email).observeSingleEvent(of: .value) { snapshot in
             guard snapshot.value as? String != nil else {
                 completion(false)
@@ -48,7 +45,7 @@ class LoginViewModel : ObservableObject {
     func addUser(email: String) {
         let date = Date()
         let userRef = userRef.child("\(LoginViewModel.safeEmail(emailAddress: email))")
-        UserManager.shared.userId = "\(LoginViewModel.safeEmail(emailAddress: email))"
+        UserManager.shared.id = "\(LoginViewModel.safeEmail(emailAddress: email))"
         let newUser = [
             "id" : "\(LoginViewModel.safeEmail(emailAddress: email))",
             "email": email,
@@ -114,10 +111,11 @@ class LoginViewModel : ObservableObject {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                print(result)
                 self.state = .login
                 
                 let email = GIDSignIn.sharedInstance.currentUser?.profile?.email ?? ""
+                UserManager.shared.email = email
+                UserManager.shared.image = "\(Auth.auth().currentUser?.photoURL ?? URL(string: ""))"
                 //가입 여부 확인
                 userExists(with: email , completion: { result in
                     if result {

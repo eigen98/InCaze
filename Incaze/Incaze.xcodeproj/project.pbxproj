@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE01AA38297967E600856C26 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE01AA37297967E600856C26 /* Binding+.swift */; };
+		EE0930EE296B55D300455CEC /* giphy-unscreen.gif in Resources */ = {isa = PBXBuildFile; fileRef = EE0930ED296B55D300455CEC /* giphy-unscreen.gif */; };
+		EE0930F0296B560E00455CEC /* DogGifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0930EF296B560E00455CEC /* DogGifImageView.swift */; };
+		EE144001295B3FC7005E6898 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE144000295B3FC7005E6898 /* MapView.swift */; };
+		EE14866C295DD4750034F939 /* EarthAnimationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE14866B295DD4750034F939 /* EarthAnimationCode.swift */; };
+		EE14866E295DD5150034F939 /* TwoPlayerRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE14866D295DD5150034F939 /* TwoPlayerRunningView.swift */; };
+		EE28058729799861007F0ADF /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28058629799860007F0ADF /* ClockView.swift */; };
+		EE2E1A5C2961EBAC009F4F33 /* IncazeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E1A5B2961EBAC009F4F33 /* IncazeWatchApp.swift */; };
+		EE2E1A5E2961EBAC009F4F33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E1A5D2961EBAC009F4F33 /* ContentView.swift */; };
+		EE2E1A602961EBAE009F4F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2E1A5F2961EBAE009F4F33 /* Assets.xcassets */; };
+		EE2E1A632961EBAE009F4F33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2E1A622961EBAE009F4F33 /* Preview Assets.xcassets */; };
+		EE2E1A6929620240009F4F33 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E1A6829620240009F4F33 /* SearchViewModel.swift */; };
+		EE302726296C48B3009A7F6B /* RunningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE302725296C48B3009A7F6B /* RunningViewModel.swift */; };
+		EE30272B296C5FD8009A7F6B /* Incaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE302729296C5FD8009A7F6B /* Incaze.xcdatamodeld */; };
 		EE3D10722940019E0010181B /* IncazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10712940019E0010181B /* IncazeApp.swift */; };
 		EE3D10742940019E0010181B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D10732940019E0010181B /* ContentView.swift */; };
 		EE3D10762940019E0010181B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10752940019E0010181B /* Assets.xcassets */; };
@@ -29,14 +43,64 @@
 		EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10B1294030730010181B /* GoogleService-Info.plist */; };
 		EE43B8D62941A7FB006F5113 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D52941A7FB006F5113 /* Key.swift */; };
 		EE43B8D82941A834006F5113 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D72941A834006F5113 /* UserManager.swift */; };
+		EE5339932978B22700CDB5A5 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339922978B22700CDB5A5 /* DependencyManager.swift */; };
+		EE5339952978B8D500CDB5A5 /* RunService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339942978B8D500CDB5A5 /* RunService.swift */; };
+		EE5339972978BAD700CDB5A5 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339962978BAD700CDB5A5 /* Parameters.swift */; };
+		EE5339992978BAE800CDB5A5 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339982978BAE800CDB5A5 /* Power.swift */; };
+		EE53399B2978BB1F00CDB5A5 /* Energy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53399A2978BB1F00CDB5A5 /* Energy.swift */; };
+		EE53399D2978BB3800CDB5A5 /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53399C2978BB3800CDB5A5 /* Weight.swift */; };
+		EE53399F2978BC4400CDB5A5 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53399E2978BC4400CDB5A5 /* Timer.swift */; };
+		EE5339A12978C2D600CDB5A5 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339A02978C2D600CDB5A5 /* Formatters.swift */; };
+		EE5339A32978C8FB00CDB5A5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339A22978C8FB00CDB5A5 /* Settings.swift */; };
+		EE5339A52978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339A42978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift */; };
+		EE57A49A297CCC6100051DBB /* MatchingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57A499297CCC6100051DBB /* MatchingRepository.swift */; };
 		EE60238529405FC300472CD2 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238429405FC300472CD2 /* BoardListView.swift */; };
 		EE6023882940684400472CD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6023872940684400472CD2 /* User.swift */; };
 		EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE602389294080B100472CD2 /* BoardListViewModel.swift */; };
 		EE60238C2940870B00472CD2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238B2940870B00472CD2 /* Room.swift */; };
+		EE60FB1A2974C84D004F82E2 /* AnyTransition+SlideInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60FB192974C84D004F82E2 /* AnyTransition+SlideInOut.swift */; };
+		EE6C517A2949558700028754 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C51792949558700028754 /* RingShape.swift */; };
+		EE6C517D294956CD00028754 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C517C294956CD00028754 /* Ring.swift */; };
+		EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C517E2949585F00028754 /* CustomRingView.swift */; };
+		EE76BB482946E466001232ED /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE76BB472946E466001232ED /* FirebaseFirestoreSwift */; };
+		EEBEAB3F2977F6350069E5FD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EEBEAB3E2977F6350069E5FD /* Swinject */; };
+		EECA0EDA296C06FB004124BE /* LocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA0ED9296C06FB004124BE /* LocationPermission.swift */; };
+		EECA0EDC296C0894004124BE /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA0EDB296C0894004124BE /* LocationService.swift */; };
+		EED6B4B82978E38E00AA1D17 /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6B4B72978E38E00AA1D17 /* SpeedView.swift */; };
+		EEDBFB63295D57040056B14B /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB62295D57040056B14B /* View+.swift */; };
+		EEDBFB65295D6D490056B14B /* SearchTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB64295D6D490056B14B /* SearchTargetView.swift */; };
+		EEDBFB67295D73F70056B14B /* MeleeRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB66295D73F70056B14B /* MeleeRunView.swift */; };
+		EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB68295D7E400056B14B /* RunTrackingView.swift */; };
+		EEDBFB6B295D8E5D0056B14B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB6A295D8E5D0056B14B /* TestView.swift */; };
 		EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEE2A4EE2941B0810050B91E /* KeychainSwift */; };
+		EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDDCD129598E090047F3BB /* SearchView.swift */; };
+		EEF449142966CEEE0014687E /* QuizProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449122966CEEE0014687E /* QuizProgressView.swift */; };
+		EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */; };
+		EEF449182966CEF80014687E /* StartQuizModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449162966CEF70014687E /* StartQuizModalView.swift */; };
+		EEF449192966CEF80014687E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449172966CEF80014687E /* TimerView.swift */; };
+		EEF4491D2966D37E0014687E /* ClientQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF4491C2966D37E0014687E /* ClientQuizView.swift */; };
+		EEFAAFAD297B8ECD006AD71B /* RunningRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAAFAC297B8ECD006AD71B /* RunningRepository.swift */; };
+		EEFAAFAF297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAAFAE297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift */; };
+		EEFD94132959F7420064AD31 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD94122959F7420064AD31 /* FlipView.swift */; };
+		EEFDE017294F209B00A8D142 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDE016294F209B00A8D142 /* PracticeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE01AA37297967E600856C26 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		EE0930ED296B55D300455CEC /* giphy-unscreen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "giphy-unscreen.gif"; sourceTree = "<group>"; };
+		EE0930EF296B560E00455CEC /* DogGifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGifImageView.swift; sourceTree = "<group>"; };
+		EE144000295B3FC7005E6898 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		EE14866B295DD4750034F939 /* EarthAnimationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAnimationCode.swift; sourceTree = "<group>"; };
+		EE14866D295DD5150034F939 /* TwoPlayerRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerRunningView.swift; sourceTree = "<group>"; };
+		EE28058629799860007F0ADF /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		EE2E1A592961EBAC009F4F33 /* IncazeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IncazeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE2E1A5B2961EBAC009F4F33 /* IncazeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncazeWatchApp.swift; sourceTree = "<group>"; };
+		EE2E1A5D2961EBAC009F4F33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EE2E1A5F2961EBAE009F4F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE2E1A622961EBAE009F4F33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE2E1A6829620240009F4F33 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EE302725296C48B3009A7F6B /* RunningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewModel.swift; sourceTree = "<group>"; };
+		EE30272A296C5FD8009A7F6B /* Incaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Incaze.xcdatamodel; sourceTree = "<group>"; };
 		EE3D106E2940019E0010181B /* Incaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Incaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3D10712940019E0010181B /* IncazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncazeApp.swift; sourceTree = "<group>"; };
 		EE3D10732940019E0010181B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,13 +118,53 @@
 		EE3D10B1294030730010181B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE43B8D52941A7FB006F5113 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		EE43B8D72941A834006F5113 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		EE5339922978B22700CDB5A5 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		EE5339942978B8D500CDB5A5 /* RunService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunService.swift; sourceTree = "<group>"; };
+		EE5339962978BAD700CDB5A5 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		EE5339982978BAE800CDB5A5 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
+		EE53399A2978BB1F00CDB5A5 /* Energy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Energy.swift; sourceTree = "<group>"; };
+		EE53399C2978BB3800CDB5A5 /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		EE53399E2978BC4400CDB5A5 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		EE5339A02978C2D600CDB5A5 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		EE5339A22978C8FB00CDB5A5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EE5339A42978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+CustomAlert.swift"; sourceTree = "<group>"; };
+		EE57A499297CCC6100051DBB /* MatchingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRepository.swift; sourceTree = "<group>"; };
 		EE60238429405FC300472CD2 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		EE6023872940684400472CD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE602389294080B100472CD2 /* BoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewModel.swift; sourceTree = "<group>"; };
 		EE60238B2940870B00472CD2 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		EE60FB192974C84D004F82E2 /* AnyTransition+SlideInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+SlideInOut.swift"; sourceTree = "<group>"; };
+		EE6C51792949558700028754 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
+		EE6C517C294956CD00028754 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
+		EE6C517E2949585F00028754 /* CustomRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRingView.swift; sourceTree = "<group>"; };
+		EECA0ED9296C06FB004124BE /* LocationPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermission.swift; sourceTree = "<group>"; };
+		EECA0EDB296C0894004124BE /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		EED6B4B72978E38E00AA1D17 /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		EEDBFB62295D57040056B14B /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		EEDBFB64295D6D490056B14B /* SearchTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTargetView.swift; sourceTree = "<group>"; };
+		EEDBFB66295D73F70056B14B /* MeleeRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeRunView.swift; sourceTree = "<group>"; };
+		EEDBFB68295D7E400056B14B /* RunTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTrackingView.swift; sourceTree = "<group>"; };
+		EEDBFB6A295D8E5D0056B14B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		EEEDDCD129598E090047F3BB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		EEF449122966CEEE0014687E /* QuizProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProgressView.swift; sourceTree = "<group>"; };
+		EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizAnswerButtonView.swift; sourceTree = "<group>"; };
+		EEF449162966CEF70014687E /* StartQuizModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartQuizModalView.swift; sourceTree = "<group>"; };
+		EEF449172966CEF80014687E /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		EEF4491C2966D37E0014687E /* ClientQuizView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientQuizView.swift; sourceTree = "<group>"; };
+		EEFAAFAC297B8ECD006AD71B /* RunningRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningRepository.swift; sourceTree = "<group>"; };
+		EEFAAFAE297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+ToAnyPublisher.swift"; sourceTree = "<group>"; };
+		EEFD94122959F7420064AD31 /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
+		EEFDE016294F209B00A8D142 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EE2E1A562961EBAC009F4F33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE3D106B2940019E0010181B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +174,8 @@
 				EE3D10A02940199E0010181B /* GoogleSignIn in Frameworks */,
 				EE3D108B29400A800010181B /* FirebaseCrashlytics in Frameworks */,
 				EE3D109329400A800010181B /* FirebaseMessaging in Frameworks */,
+				EEBEAB3F2977F6350069E5FD /* Swinject in Frameworks */,
+				EE76BB482946E466001232ED /* FirebaseFirestoreSwift in Frameworks */,
 				EE3D108729400A800010181B /* FirebaseAnalytics in Frameworks */,
 				EE3D108D29400A800010181B /* FirebaseDatabase in Frameworks */,
 				EE3D108929400A800010181B /* FirebaseAuth in Frameworks */,
@@ -80,11 +186,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE2E1A5A2961EBAC009F4F33 /* IncazeWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				EE2E1A5B2961EBAC009F4F33 /* IncazeWatchApp.swift */,
+				EE2E1A5D2961EBAC009F4F33 /* ContentView.swift */,
+				EE2E1A5F2961EBAE009F4F33 /* Assets.xcassets */,
+				EE2E1A612961EBAE009F4F33 /* Preview Content */,
+			);
+			path = "IncazeWatch Watch App";
+			sourceTree = "<group>";
+		};
+		EE2E1A612961EBAE009F4F33 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EE2E1A622961EBAE009F4F33 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE2E1A6729620227009F4F33 /* SearchUser */ = {
+			isa = PBXGroup;
+			children = (
+				EEEDDCD129598E090047F3BB /* SearchView.swift */,
+				EE2E1A6829620240009F4F33 /* SearchViewModel.swift */,
+			);
+			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		EE302724296C4889009A7F6B /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				EE302725296C48B3009A7F6B /* RunningViewModel.swift */,
+				EE14866D295DD5150034F939 /* TwoPlayerRunningView.swift */,
+			);
+			path = Running;
+			sourceTree = "<group>";
+		};
+		EE302727296C5E57009A7F6B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EE57A498297CCC4B00051DBB /* Matching */,
+				EEFAAFAB297B8E67006AD71B /* Running */,
+				EE302728296C5E61009A7F6B /* CoreData */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		EE302728296C5E61009A7F6B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EE302729296C5FD8009A7F6B /* Incaze.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		EE3D10652940019D0010181B = {
 			isa = PBXGroup;
 			children = (
 				EE3D10702940019E0010181B /* Incaze */,
+				EE2E1A5A2961EBAC009F4F33 /* IncazeWatch Watch App */,
 				EE3D106F2940019E0010181B /* Products */,
+				EE76BB462946E466001232ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				EE3D106E2940019E0010181B /* Incaze.app */,
+				EE2E1A592961EBAC009F4F33 /* IncazeWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +271,11 @@
 				EE3D10712940019E0010181B /* IncazeApp.swift */,
 				EE3D10732940019E0010181B /* ContentView.swift */,
 				EE3D10752940019E0010181B /* Assets.xcassets */,
+				EE0930ED296B55D300455CEC /* giphy-unscreen.gif */,
 				EE3D10B1294030730010181B /* GoogleService-Info.plist */,
 				EE3D10772940019E0010181B /* Incaze.entitlements */,
 				EE3D10782940019E0010181B /* Preview Content */,
+				EE0930EF296B560E00455CEC /* DogGifImageView.swift */,
 			);
 			path = Incaze;
 			sourceTree = "<group>";
@@ -125,10 +291,14 @@
 		EE3D1080294005EF0010181B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				EEE90E922976B58E00157A29 /* Practice */,
+				EE302727296C5E57009A7F6B /* Repository */,
+				EEF449112966CEC90014687E /* Temp */,
 				EE6023862940683A00472CD2 /* Model */,
 				EE3D10A229401B8E0010181B /* View */,
 				EE3D1097294011730010181B /* Services */,
 				EE3D1094294010E30010181B /* DI */,
+				EEFDE016294F209B00A8D142 /* PracticeView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -151,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				EE3D1095294010FB0010181B /* ServiceProvider.swift */,
+				EE5339922978B22700CDB5A5 /* DependencyManager.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -158,6 +329,7 @@
 		EE3D1097294011730010181B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EECA0ED8296C06D0004124BE /* Location */,
 				EE3D1098294011820010181B /* AuthService */,
 			);
 			path = Services;
@@ -175,6 +347,9 @@
 		EE3D10A229401B8E0010181B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EE302724296C4889009A7F6B /* Running */,
+				EE2E1A6729620227009F4F33 /* SearchUser */,
+				EE6C51782949557500028754 /* Componenet */,
 				EE60238329405F8600472CD2 /* Board */,
 				EE3D10AA294025A80010181B /* Home */,
 				EE3D10A329401BA10010181B /* Onboarding */,
@@ -219,10 +394,19 @@
 		EE43B8D42941A5E1006F5113 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				EEDBFB61295D56F40056B14B /* Util */,
 				EE43B8D52941A7FB006F5113 /* Key.swift */,
 				EE43B8D72941A834006F5113 /* UserManager.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		EE57A498297CCC4B00051DBB /* Matching */ = {
+			isa = PBXGroup;
+			children = (
+				EE57A499297CCC6100051DBB /* MatchingRepository.swift */,
+			);
+			path = Matching;
 			sourceTree = "<group>";
 		};
 		EE60238329405F8600472CD2 /* Board */ = {
@@ -239,13 +423,112 @@
 			children = (
 				EE6023872940684400472CD2 /* User.swift */,
 				EE60238B2940870B00472CD2 /* Room.swift */,
+				EE5339962978BAD700CDB5A5 /* Parameters.swift */,
+				EE5339982978BAE800CDB5A5 /* Power.swift */,
+				EE53399A2978BB1F00CDB5A5 /* Energy.swift */,
+				EE53399C2978BB3800CDB5A5 /* Weight.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EE6C51782949557500028754 /* Componenet */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C51792949558700028754 /* RingShape.swift */,
+				EE6C517C294956CD00028754 /* Ring.swift */,
+				EE6C517E2949585F00028754 /* CustomRingView.swift */,
+				EEDBFB64295D6D490056B14B /* SearchTargetView.swift */,
+				EED6B4B72978E38E00AA1D17 /* SpeedView.swift */,
+				EE28058629799860007F0ADF /* ClockView.swift */,
+			);
+			path = Componenet;
+			sourceTree = "<group>";
+		};
+		EE76BB462946E466001232ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EECA0ED8296C06D0004124BE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EECA0ED9296C06FB004124BE /* LocationPermission.swift */,
+				EECA0EDB296C0894004124BE /* LocationService.swift */,
+				EE5339942978B8D500CDB5A5 /* RunService.swift */,
+				EE5339A22978C8FB00CDB5A5 /* Settings.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		EEDBFB61295D56F40056B14B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EEDBFB62295D57040056B14B /* View+.swift */,
+				EE60FB192974C84D004F82E2 /* AnyTransition+SlideInOut.swift */,
+				EE53399E2978BC4400CDB5A5 /* Timer.swift */,
+				EE5339A02978C2D600CDB5A5 /* Formatters.swift */,
+				EE5339A42978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift */,
+				EE01AA37297967E600856C26 /* Binding+.swift */,
+				EEFAAFAE297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EEE90E922976B58E00157A29 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				EEFD94122959F7420064AD31 /* FlipView.swift */,
+				EE144000295B3FC7005E6898 /* MapView.swift */,
+				EEDBFB66295D73F70056B14B /* MeleeRunView.swift */,
+				EEDBFB68295D7E400056B14B /* RunTrackingView.swift */,
+				EEDBFB6A295D8E5D0056B14B /* TestView.swift */,
+				EE14866B295DD4750034F939 /* EarthAnimationCode.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		EEF449112966CEC90014687E /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */,
+				EEF449162966CEF70014687E /* StartQuizModalView.swift */,
+				EEF449172966CEF80014687E /* TimerView.swift */,
+				EEF4491C2966D37E0014687E /* ClientQuizView.swift */,
+				EEF449122966CEEE0014687E /* QuizProgressView.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		EEFAAFAB297B8E67006AD71B /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				EEFAAFAC297B8ECD006AD71B /* RunningRepository.swift */,
+			);
+			path = Running;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EE2E1A582961EBAC009F4F33 /* IncazeWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE2E1A662961EBAE009F4F33 /* Build configuration list for PBXNativeTarget "IncazeWatch Watch App" */;
+			buildPhases = (
+				EE2E1A552961EBAC009F4F33 /* Sources */,
+				EE2E1A562961EBAC009F4F33 /* Frameworks */,
+				EE2E1A572961EBAC009F4F33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IncazeWatch Watch App";
+			productName = "IncazeWatch Watch App";
+			productReference = EE2E1A592961EBAC009F4F33 /* IncazeWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EE3D106D2940019E0010181B /* Incaze */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE3D107D2940019E0010181B /* Build configuration list for PBXNativeTarget "Incaze" */;
@@ -269,6 +552,8 @@
 				EE3D109229400A800010181B /* FirebaseMessaging */,
 				EE3D109F2940199E0010181B /* GoogleSignIn */,
 				EEE2A4EE2941B0810050B91E /* KeychainSwift */,
+				EE76BB472946E466001232ED /* FirebaseFirestoreSwift */,
+				EEBEAB3E2977F6350069E5FD /* Swinject */,
 			);
 			productName = Incaze;
 			productReference = EE3D106E2940019E0010181B /* Incaze.app */;
@@ -281,9 +566,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					EE2E1A582961EBAC009F4F33 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					EE3D106D2940019E0010181B = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -302,17 +590,28 @@
 				EE3D108529400A800010181B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				EE3D109E2940199E0010181B /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */,
 				EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				EEBEAB3D2977F6350069E5FD /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = EE3D106F2940019E0010181B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EE3D106D2940019E0010181B /* Incaze */,
+				EE2E1A582961EBAC009F4F33 /* IncazeWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EE2E1A572961EBAC009F4F33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE2E1A632961EBAE009F4F33 /* Preview Assets.xcassets in Resources */,
+				EE2E1A602961EBAE009F4F33 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE3D106C2940019E0010181B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,37 +619,150 @@
 				EE3D107A2940019E0010181B /* Preview Assets.xcassets in Resources */,
 				EE3D10762940019E0010181B /* Assets.xcassets in Resources */,
 				EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */,
+				EE0930EE296B55D300455CEC /* giphy-unscreen.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EE2E1A552961EBAC009F4F33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE2E1A5E2961EBAC009F4F33 /* ContentView.swift in Sources */,
+				EE2E1A5C2961EBAC009F4F33 /* IncazeWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE3D106A2940019E0010181B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */,
+				EEFD94132959F7420064AD31 /* FlipView.swift in Sources */,
+				EE57A49A297CCC6100051DBB /* MatchingRepository.swift in Sources */,
 				EE3D109C294015910010181B /* GoogleAuthService.swift in Sources */,
+				EE5339A32978C8FB00CDB5A5 /* Settings.swift in Sources */,
+				EE144001295B3FC7005E6898 /* MapView.swift in Sources */,
+				EEDBFB67295D73F70056B14B /* MeleeRunView.swift in Sources */,
+				EECA0EDA296C06FB004124BE /* LocationPermission.swift in Sources */,
+				EE28058729799861007F0ADF /* ClockView.swift in Sources */,
+				EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */,
+				EE5339992978BAE800CDB5A5 /* Power.swift in Sources */,
+				EEDBFB63295D57040056B14B /* View+.swift in Sources */,
+				EEF449182966CEF80014687E /* StartQuizModalView.swift in Sources */,
+				EE2E1A6929620240009F4F33 /* SearchViewModel.swift in Sources */,
 				EE60238529405FC300472CD2 /* BoardListView.swift in Sources */,
+				EEF4491D2966D37E0014687E /* ClientQuizView.swift in Sources */,
+				EE0930F0296B560E00455CEC /* DogGifImageView.swift in Sources */,
+				EE5339932978B22700CDB5A5 /* DependencyManager.swift in Sources */,
 				EE3D1096294010FB0010181B /* ServiceProvider.swift in Sources */,
 				EE43B8D82941A834006F5113 /* UserManager.swift in Sources */,
+				EE6C517D294956CD00028754 /* Ring.swift in Sources */,
+				EEDBFB65295D6D490056B14B /* SearchTargetView.swift in Sources */,
 				EE3D10A629401BD50010181B /* LoginViewModel.swift in Sources */,
 				EE3D10B0294027E00010181B /* LoginView.swift in Sources */,
 				EE3D10742940019E0010181B /* ContentView.swift in Sources */,
 				EE60238C2940870B00472CD2 /* Room.swift in Sources */,
+				EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */,
+				EE302726296C48B3009A7F6B /* RunningViewModel.swift in Sources */,
+				EECA0EDC296C0894004124BE /* LocationService.swift in Sources */,
+				EE5339952978B8D500CDB5A5 /* RunService.swift in Sources */,
+				EE14866E295DD5150034F939 /* TwoPlayerRunningView.swift in Sources */,
 				EE43B8D62941A7FB006F5113 /* Key.swift in Sources */,
+				EEFAAFAD297B8ECD006AD71B /* RunningRepository.swift in Sources */,
 				EE3D10722940019E0010181B /* IncazeApp.swift in Sources */,
+				EEFAAFAF297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift in Sources */,
+				EE14866C295DD4750034F939 /* EarthAnimationCode.swift in Sources */,
+				EE5339A52978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift in Sources */,
+				EE30272B296C5FD8009A7F6B /* Incaze.xcdatamodeld in Sources */,
+				EE01AA38297967E600856C26 /* Binding+.swift in Sources */,
+				EE60FB1A2974C84D004F82E2 /* AnyTransition+SlideInOut.swift in Sources */,
+				EE53399B2978BB1F00CDB5A5 /* Energy.swift in Sources */,
 				EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */,
+				EEF449192966CEF80014687E /* TimerView.swift in Sources */,
+				EE6C517A2949558700028754 /* RingShape.swift in Sources */,
+				EE5339972978BAD700CDB5A5 /* Parameters.swift in Sources */,
+				EEF449142966CEEE0014687E /* QuizProgressView.swift in Sources */,
 				EE3D10AE294025E80010181B /* HomeView.swift in Sources */,
+				EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */,
+				EE5339A12978C2D600CDB5A5 /* Formatters.swift in Sources */,
 				EE3D109A294011920010181B /* AuthService.swift in Sources */,
 				EE3D10A9294022010010181B /* GoogleSignInButton.swift in Sources */,
+				EED6B4B82978E38E00AA1D17 /* SpeedView.swift in Sources */,
+				EE53399F2978BC4400CDB5A5 /* Timer.swift in Sources */,
+				EEDBFB6B295D8E5D0056B14B /* TestView.swift in Sources */,
+				EEFDE017294F209B00A8D142 /* PracticeView.swift in Sources */,
 				EE6023882940684400472CD2 /* User.swift in Sources */,
+				EE53399D2978BB3800CDB5A5 /* Weight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		EE2E1A642961EBAE009F4F33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IncazeWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Q57K6D2JP2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IncazeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		EE2E1A652961EBAE009F4F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IncazeWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = Q57K6D2JP2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IncazeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
 		EE3D107B2940019E0010181B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -545,6 +957,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EE2E1A662961EBAE009F4F33 /* Build configuration list for PBXNativeTarget "IncazeWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE2E1A642961EBAE009F4F33 /* Debug */,
+				EE2E1A652961EBAE009F4F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EE3D10692940019D0010181B /* Build configuration list for PBXProject "Incaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -580,6 +1001,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.0.0;
+			};
+		};
+		EEBEAB3D2977F6350069E5FD /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
 			};
 		};
 		EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
@@ -633,12 +1062,35 @@
 			package = EE3D109E2940199E0010181B /* XCRemoteSwiftPackageReference "GoogleSignin-iOS" */;
 			productName = GoogleSignIn;
 		};
+		EE76BB472946E466001232ED /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE3D108529400A800010181B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		EEBEAB3E2977F6350069E5FD /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEBEAB3D2977F6350069E5FD /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		EEE2A4EE2941B0810050B91E /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEE2A4ED2941B0810050B91E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		EE302729296C5FD8009A7F6B /* Incaze.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE30272A296C5FD8009A7F6B /* Incaze.xcdatamodel */,
+			);
+			currentVersion = EE30272A296C5FD8009A7F6B /* Incaze.xcdatamodel */;
+			path = Incaze.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EE3D10662940019D0010181B /* Project object */;
 }

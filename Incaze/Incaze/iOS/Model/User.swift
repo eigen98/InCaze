@@ -26,7 +26,7 @@ enum MembershipStatus{
 }
 
 //유저
-struct User : Codable{
+struct User : Codable, Identifiable{
     var id : String
     var email : String
     var status : Int
@@ -35,8 +35,10 @@ struct User : Codable{
     var updatedAt : String
     var deletedAt : String?
     var description : String?
-    var point : Int //win count
-    var isHuman : Bool
+    var point : Int? //win count
+    var isHuman : Bool?
+    var image : String?
+    var isSelectable : Bool // 상대 선택 가능 여부 : 최근 게임에서 이겼을 경우 false , 졌을 경우 true
     //    var pushToken : PushToken
 //    var archive : Archive
     

@@ -35,7 +35,7 @@ struct BoardListView: View {
                     TextField("Item price", text: $newItem.price)
                     TextField("Item description", text: $newItem.description)
                     Button("Sell") {
-                        var userid = UserManager.shared.userId
+                        var userid = UserManager.shared.id
                         var newRoom = Room(id: userid ,
                                            title: newItem.name,
                                            contents: newItem.description,

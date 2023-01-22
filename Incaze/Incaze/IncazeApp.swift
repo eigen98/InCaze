@@ -32,8 +32,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 
 @main
-
 struct IncazeApp: App {// 앱 수명 주기 관리를 위한 AppDelegate와 SceneDelegate를 대체하는 App 프로토콜
+    
+    //DI
+     //DependencyManager.shared.registerDependencies()
+    
     @StateObject var loginViewModel = LoginViewModel()
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -42,7 +45,11 @@ struct IncazeApp: App {// 앱 수명 주기 관리를 위한 AppDelegate와 Scen
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(loginViewModel)
+            .environmentObject(loginViewModel)
+            //RunTrackingView(now: .constant(CGPoint()))
+           // ClientQuizView()
+            //TrainAnimationView()
+                
         }
     }
 }
