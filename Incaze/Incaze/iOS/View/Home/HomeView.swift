@@ -22,6 +22,7 @@ struct HomeView: View {
     private var locationPermissions: LocationPermissions = LocationPermissions()
     
     var notificationView: some View {
+        
         GeometryReader { geometry in
             Group {
                 Button(action: {

@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 import CoreLocation
 import SpriteKit
+
 //달리기 화면
 struct TwoPlayerRunningView: View {
     
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var viewModel : RunningViewModel
     @State private var animate: Bool = false
@@ -50,12 +52,13 @@ struct TwoPlayerRunningView: View {
                 var animation =  Animation.linear(duration: 2).repeatForever()
                 
                 ZStack{
-                    DogGifImageView("giphy-unscreen")
+//                    DogGifImageView("giphy-unscreen")
+                    BasicRunnerView()
                         .frame(width: 200, height: 200)
-                        .offset(x: size * 0.08, y: size * 0.08 ) //
+                        .offset(x: size * 0.08, y: 0 ) //
                         
                 }
-                .offset(x: move ? -50.0 : 30.0 , y: 0)
+                .offset(x: move ? -50.0 : 30.0 , y: 4)
                 .onAppear(perform: {
                     DispatchQueue.main.async {
                                         withAnimation(animation) {
@@ -176,6 +179,23 @@ struct TwoPlayerRunningView: View {
                 .frame(width: size)
                 .padding(.trailing, 24)
                 .offset(.init(width: 0, height: size/2 - 60))
+                
+                /*
+                 제한 시간 발동
+                 */
+                if viewModel.timesUp{
+                    TimesUpView()
+                        .offset(.init(width: 0, height: size/2 - 60))
+                        .onAppear{
+                            viewModel.countDown(completion: {
+                                //presentationMode.wrappedValue.dismiss()
+                                //NavigationUtil.popToRootView()
+                                //TODO: 종료
+                                showEndRunModal()
+                            })
+                        }
+                }
+                
 
             }
             //.navigationBarBackButtonHidden()
@@ -225,19 +245,21 @@ struct TwoPlayerRunningView: View {
     func showStartRunModal(){
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
             StartQuizModalView()
-                .onDisappear{
+                .onAppear{
                     viewModel.addRunningChannel(myId: UserManager.shared.id, oppId: viewModel.oppUser.id)
                 }
-            
         }
     }
+    
     /*
      종료 모달 보여주기
      */
     func showEndRunModal(){
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-            StartQuizModalView()
-            
+            RunEndModalView()
+                .onDisappear{
+                    NavigationUtil.popToRootView()
+                }
         }
     }
     
@@ -245,7 +267,7 @@ struct TwoPlayerRunningView: View {
 
 struct TrainAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        TwoPlayerRunningView(viewModel: RunningViewModel(oppUser: User(id: "", email: "", status: 0, nickname : "", createdAt: "", updatedAt: "")))
+        TwoPlayerRunningView(viewModel: RunningViewModel(oppUser: User(id: "", email: "", status: 0, nickname : "", createdAt: "", updatedAt: "", isSelectable: false)))
     }
 }
 

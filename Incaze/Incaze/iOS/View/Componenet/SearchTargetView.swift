@@ -84,7 +84,7 @@ struct SearchTargetView: View {
 
 struct SearchTargetView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTargetView(oppUser: User(id: "", email: "", status: 0, nickname: "", createdAt: "", updatedAt: ""), image: "")
+        SearchTargetView(oppUser: User(id: "", email: "", status: 0, nickname: "", createdAt: "", updatedAt: "", isSelectable: false), image: "")
     }
 }
 

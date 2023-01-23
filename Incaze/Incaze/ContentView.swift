@@ -16,7 +16,7 @@ struct ContentView: View {
         
             
         switch viewModel.state {
-            case .login : HomeView()
+            case .login : TabbarView()
             case .logout : LoginView()
             case .unregistered:
             LoginView()

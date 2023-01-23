@@ -8,10 +8,13 @@
 import Foundation
 
 import KeychainSwift
+import UIKit
 
 //유저 정보 관리 클래스
 class UserManager {
     static let shared = UserManager()
+    var deviceWidth = UIScreen.main.bounds.width
+    
     
     var jwt: String {
         get {

@@ -57,9 +57,10 @@ class RunningRepositoryImpl : RunningRepository{
     }
     
     func updateMyRunningData(channelId : String, distance: Double ) -> AnyPublisher<Double?, RunningRepoError> {
-        
+        var myId = UserManager.shared.id
+        print("channelId : \(channelId) \(myId)")
         return Future<Double?, RunningRepoError>{observer in
-            self.databaseRef.setValue(distance){(error, snapshot) in
+            self.databaseRef.child(channelId).child(myId).child("distance").setValue(distance){(error, snapshot) in
                 if error != nil{
                     observer(.failure(RunningRepoError.failUpdateMyData))
                     return
