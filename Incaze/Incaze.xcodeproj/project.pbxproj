@@ -81,12 +81,15 @@
 		EED2EBBE297E6EE30093801F /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2EBBD297E6EE30093801F /* MyPageView.swift */; };
 		EED2EBC0297E7ABF0093801F /* PagingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2EBBF297E7ABF0093801F /* PagingTabView.swift */; };
 		EED6B4B82978E38E00AA1D17 /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6B4B72978E38E00AA1D17 /* SpeedView.swift */; };
+		EEDACCB32980E49A00216302 /* HealthDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDACCB22980E49A00216302 /* HealthDataRepository.swift */; };
 		EEDBFB63295D57040056B14B /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB62295D57040056B14B /* View+.swift */; };
 		EEDBFB65295D6D490056B14B /* SearchTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB64295D6D490056B14B /* SearchTargetView.swift */; };
 		EEDBFB67295D73F70056B14B /* MeleeRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB66295D73F70056B14B /* MeleeRunView.swift */; };
 		EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB68295D7E400056B14B /* RunTrackingView.swift */; };
 		EEDBFB6B295D8E5D0056B14B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB6A295D8E5D0056B14B /* TestView.swift */; };
 		EEDC2F7C297EF0E600719E9A /* RecentButtonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDC2F7B297EF0E600719E9A /* RecentButtonCellView.swift */; };
+		EEDF747A2980ED8300AC6BDB /* jewel.json in Resources */ = {isa = PBXBuildFile; fileRef = EEDF74792980ED8300AC6BDB /* jewel.json */; };
+		EEDF747C2980EE6B00AC6BDB /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = EEDF747B2980EE6B00AC6BDB /* Fire.json */; };
 		EEE14185297E9BE000EAB656 /* JeepCar.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE14184297E9BE000EAB656 /* JeepCar.json */; };
 		EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEE2A4EE2941B0810050B91E /* KeychainSwift */; };
 		EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDDCD129598E090047F3BB /* SearchView.swift */; };
@@ -169,12 +172,15 @@
 		EED2EBBD297E6EE30093801F /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		EED2EBBF297E7ABF0093801F /* PagingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingTabView.swift; sourceTree = "<group>"; };
 		EED6B4B72978E38E00AA1D17 /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		EEDACCB22980E49A00216302 /* HealthDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataRepository.swift; sourceTree = "<group>"; };
 		EEDBFB62295D57040056B14B /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		EEDBFB64295D6D490056B14B /* SearchTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTargetView.swift; sourceTree = "<group>"; };
 		EEDBFB66295D73F70056B14B /* MeleeRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeRunView.swift; sourceTree = "<group>"; };
 		EEDBFB68295D7E400056B14B /* RunTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTrackingView.swift; sourceTree = "<group>"; };
 		EEDBFB6A295D8E5D0056B14B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		EEDC2F7B297EF0E600719E9A /* RecentButtonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentButtonCellView.swift; sourceTree = "<group>"; };
+		EEDF74792980ED8300AC6BDB /* jewel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jewel.json; sourceTree = "<group>"; };
+		EEDF747B2980EE6B00AC6BDB /* Fire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire.json; sourceTree = "<group>"; };
 		EEE14184297E9BE000EAB656 /* JeepCar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JeepCar.json; sourceTree = "<group>"; };
 		EEEDDCD129598E090047F3BB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EEF449122966CEEE0014687E /* QuizProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProgressView.swift; sourceTree = "<group>"; };
@@ -262,6 +268,7 @@
 				EE57A498297CCC4B00051DBB /* Matching */,
 				EEFAAFAB297B8E67006AD71B /* Running */,
 				EE302728296C5E61009A7F6B /* CoreData */,
+				EEDACCB22980E49A00216302 /* HealthDataRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -362,6 +369,7 @@
 		EE3D1097294011730010181B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EEDACCB12980E46300216302 /* HealthKit */,
 				EECA0ED8296C06D0004124BE /* Location */,
 				EE3D1098294011820010181B /* AuthService */,
 			);
@@ -528,6 +536,8 @@
 				EED2EBB4297E66610093801F /* BasicRunner.json */,
 				EED2EBB8297E6B550093801F /* SpaceMan.json */,
 				EEE14184297E9BE000EAB656 /* JeepCar.json */,
+				EEDF74792980ED8300AC6BDB /* jewel.json */,
+				EEDF747B2980EE6B00AC6BDB /* Fire.json */,
 			);
 			path = LottieAsset;
 			sourceTree = "<group>";
@@ -540,6 +550,13 @@
 				EED2EBBF297E7ABF0093801F /* PagingTabView.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		EEDACCB12980E46300216302 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HealthKit;
 			sourceTree = "<group>";
 		};
 		EEDBFB61295D56F40056B14B /* Util */ = {
@@ -711,8 +728,10 @@
 				EED2EBB9297E6B550093801F /* SpaceMan.json in Resources */,
 				EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */,
 				EED2EBB5297E66610093801F /* BasicRunner.json in Resources */,
+				EEDF747A2980ED8300AC6BDB /* jewel.json in Resources */,
 				EEE14185297E9BE000EAB656 /* JeepCar.json in Resources */,
 				EE0930EE296B55D300455CEC /* giphy-unscreen.gif in Resources */,
+				EEDF747C2980EE6B00AC6BDB /* Fire.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +785,7 @@
 				EE9C56B529801AA8006F36ED /* TermsOfUseCellView.swift in Sources */,
 				EE3D10742940019E0010181B /* ContentView.swift in Sources */,
 				EE60238C2940870B00472CD2 /* Room.swift in Sources */,
+				EEDACCB32980E49A00216302 /* HealthDataRepository.swift in Sources */,
 				EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */,
 				EED2EBB2297E64C70093801F /* RunEndModalView.swift in Sources */,
 				EE302726296C48B3009A7F6B /* RunningViewModel.swift in Sources */,
@@ -990,6 +1010,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Incaze/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "건강 데이터 측정을 위해 데이터 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "건강 데이터 측정을 위해 데이터 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = " 앱을 사용하는 동안 위치정보를 수신합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " 앱을 사용하는 동안 위치정보를 수신합니다.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1031,6 +1055,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Incaze/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "건강 데이터 측정을 위해 데이터 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "건강 데이터 측정을 위해 데이터 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = " 앱을 사용하는 동안 위치정보를 수신합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = " 앱을 사용하는 동안 위치정보를 수신합니다.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

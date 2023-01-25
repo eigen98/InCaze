@@ -24,6 +24,9 @@ struct TabbarView: View {
             
             
         }
+        .onAppear{
+            HealthDataRepository.shared.requestAuthorization()
+        }
     }
 }
 

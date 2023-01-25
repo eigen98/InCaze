@@ -22,6 +22,7 @@ struct ContentView: View {
             LoginView()
         }
     }
+
     
     func login() {
         // Perform login here
