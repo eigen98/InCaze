@@ -100,9 +100,14 @@ struct TwoPlayerRunningView: View {
                 
                 
                 //Train
-                Rectangle()
+                Image("train")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(Color(red: 253/255, green: 230/255, blue: 31/255))
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: size * 0.28, height: size * 0.28)
-                    .mask(Image("train").resizable())
+                    
+
                     //.offset(x: size * 0.16, y: 0)
                     .offset(x: move ? -100.0 : 100.0 , y: 0)
                     .onAppear(perform: {
@@ -112,6 +117,7 @@ struct TwoPlayerRunningView: View {
                             }
                         }
                     })
+                    
                     
                
                 
@@ -215,7 +221,9 @@ struct TwoPlayerRunningView: View {
                 })
             }
         }
+        .background(.black)
     }
+        
     
     func startMeasurement() {
         locationManager = CLLocationManager()

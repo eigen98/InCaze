@@ -16,6 +16,12 @@ struct TabbarView: View {
                     Text("홈화면")
                 }
             
+            MyPageView()
+                .tabItem{
+                    Image(systemName: "person.fill")
+                    Text("My")
+                }
+            
             
         }
     }

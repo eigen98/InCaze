@@ -137,9 +137,13 @@ struct HomeView: View {
       }
       .frame(width: 400)
       //.background(.blue)
+      .background(Color.init(red: 30/255, green: 26/255, blue: 62/255))
+      .navigationTitle(Text("InCaze").foregroundColor(.white))
       
-      .navigationTitle("InCaze")
       
+    }
+    .onAppear{
+        setNavigationTitleColor()
     }
     .onReceive(locationPermissions.status) { status in
         switch status {
@@ -153,6 +157,14 @@ struct HomeView: View {
     .navigationViewStyle(StackNavigationViewStyle())
       
   }
+    /*
+     NavigationTitlecolor Setting
+     */
+    func setNavigationTitleColor(){
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
 }
 
 /// A generic view that shows images from the network.

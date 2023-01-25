@@ -63,6 +63,8 @@
 		EE6C517D294956CD00028754 /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C517C294956CD00028754 /* Ring.swift */; };
 		EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C517E2949585F00028754 /* CustomRingView.swift */; };
 		EE76BB482946E466001232ED /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EE76BB472946E466001232ED /* FirebaseFirestoreSwift */; };
+		EE9C56B329801921006F36ED /* LocationInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C56B229801921006F36ED /* LocationInfoCellView.swift */; };
+		EE9C56B529801AA8006F36ED /* TermsOfUseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C56B429801AA8006F36ED /* TermsOfUseCellView.swift */; };
 		EEBEAB3F2977F6350069E5FD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EEBEAB3E2977F6350069E5FD /* Swinject */; };
 		EECA0EDA296C06FB004124BE /* LocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA0ED9296C06FB004124BE /* LocationPermission.swift */; };
 		EECA0EDC296C0894004124BE /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA0EDB296C0894004124BE /* LocationService.swift */; };
@@ -84,6 +86,7 @@
 		EEDBFB67295D73F70056B14B /* MeleeRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB66295D73F70056B14B /* MeleeRunView.swift */; };
 		EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB68295D7E400056B14B /* RunTrackingView.swift */; };
 		EEDBFB6B295D8E5D0056B14B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBFB6A295D8E5D0056B14B /* TestView.swift */; };
+		EEDC2F7C297EF0E600719E9A /* RecentButtonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDC2F7B297EF0E600719E9A /* RecentButtonCellView.swift */; };
 		EEE14185297E9BE000EAB656 /* JeepCar.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE14184297E9BE000EAB656 /* JeepCar.json */; };
 		EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEE2A4EE2941B0810050B91E /* KeychainSwift */; };
 		EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDDCD129598E090047F3BB /* SearchView.swift */; };
@@ -150,6 +153,8 @@
 		EE6C51792949558700028754 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		EE6C517C294956CD00028754 /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		EE6C517E2949585F00028754 /* CustomRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRingView.swift; sourceTree = "<group>"; };
+		EE9C56B229801921006F36ED /* LocationInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoCellView.swift; sourceTree = "<group>"; };
+		EE9C56B429801AA8006F36ED /* TermsOfUseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseCellView.swift; sourceTree = "<group>"; };
 		EECA0ED9296C06FB004124BE /* LocationPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermission.swift; sourceTree = "<group>"; };
 		EECA0EDB296C0894004124BE /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		EED2EBA7297E4EB30093801F /* TimesUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimesUpView.swift; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 		EEDBFB66295D73F70056B14B /* MeleeRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleeRunView.swift; sourceTree = "<group>"; };
 		EEDBFB68295D7E400056B14B /* RunTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTrackingView.swift; sourceTree = "<group>"; };
 		EEDBFB6A295D8E5D0056B14B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		EEDC2F7B297EF0E600719E9A /* RecentButtonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentButtonCellView.swift; sourceTree = "<group>"; };
 		EEE14184297E9BE000EAB656 /* JeepCar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JeepCar.json; sourceTree = "<group>"; };
 		EEEDDCD129598E090047F3BB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EEF449122966CEEE0014687E /* QuizProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProgressView.swift; sourceTree = "<group>"; };
@@ -529,6 +535,7 @@
 		EED2EBBC297E6ECE0093801F /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				EEDC2F7A297EF06400719E9A /* Cell */,
 				EED2EBBD297E6EE30093801F /* MyPageView.swift */,
 				EED2EBBF297E7ABF0093801F /* PagingTabView.swift */,
 			);
@@ -544,6 +551,16 @@
 				EED2EBAE297E59800093801F /* NavigationUtil.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		EEDC2F7A297EF06400719E9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEDC2F7B297EF0E600719E9A /* RecentButtonCellView.swift */,
+				EE9C56B229801921006F36ED /* LocationInfoCellView.swift */,
+				EE9C56B429801AA8006F36ED /* TermsOfUseCellView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EEE90E922976B58E00157A29 /* Practice */ = {
@@ -736,6 +753,7 @@
 				EE60238529405FC300472CD2 /* BoardListView.swift in Sources */,
 				EED2EBAF297E59800093801F /* NavigationUtil.swift in Sources */,
 				EEF4491D2966D37E0014687E /* ClientQuizView.swift in Sources */,
+				EEDC2F7C297EF0E600719E9A /* RecentButtonCellView.swift in Sources */,
 				EE0930F0296B560E00455CEC /* DogGifImageView.swift in Sources */,
 				EE5339932978B22700CDB5A5 /* DependencyManager.swift in Sources */,
 				EE3D1096294010FB0010181B /* ServiceProvider.swift in Sources */,
@@ -745,6 +763,7 @@
 				EE3D10A629401BD50010181B /* LoginViewModel.swift in Sources */,
 				EE3D10B0294027E00010181B /* LoginView.swift in Sources */,
 				EED2EBB7297E66B00093801F /* BasicRunnerView.swift in Sources */,
+				EE9C56B529801AA8006F36ED /* TermsOfUseCellView.swift in Sources */,
 				EE3D10742940019E0010181B /* ContentView.swift in Sources */,
 				EE60238C2940870B00472CD2 /* Room.swift in Sources */,
 				EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */,
@@ -773,6 +792,7 @@
 				EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */,
 				EE5339A12978C2D600CDB5A5 /* Formatters.swift in Sources */,
 				EE3D109A294011920010181B /* AuthService.swift in Sources */,
+				EE9C56B329801921006F36ED /* LocationInfoCellView.swift in Sources */,
 				EE3D10A9294022010010181B /* GoogleSignInButton.swift in Sources */,
 				EED6B4B82978E38E00AA1D17 /* SpeedView.swift in Sources */,
 				EE53399F2978BC4400CDB5A5 /* Timer.swift in Sources */,

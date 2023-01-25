@@ -14,7 +14,7 @@ import UIKit
 class UserManager {
     static let shared = UserManager()
     var deviceWidth = UIScreen.main.bounds.width
-    
+
     
     var jwt: String {
         get {

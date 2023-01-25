@@ -11,8 +11,17 @@ import Lottie
 
 struct BasicRunnerView: View {
     var body: some View {
-        LottieView(jsonName: "BasicRunner")
-            .frame(width: 120, height: 120)
+        
+        VStack{
+            LottieView(jsonName: "BasicRunner")
+              
+                .frame(width: 120, height: 120)
+        }
+        .onAppear{
+           
+        }
+        
+       
     }
 }
 
