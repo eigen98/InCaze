@@ -20,4 +20,6 @@ struct CrewModel : Codable, Identifiable{
     var memberCount : Int //최소 인원
     var minimumGrade : String //Newbie
     var mission : String?
+    var missionLevel : Int?
+    var missionCondition : String //없음, 매주, 매일, 3일마다, 격일마다
 }

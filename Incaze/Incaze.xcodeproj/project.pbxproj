@@ -109,6 +109,7 @@
 		EEF14A892984E7F600368DE1 /* CrewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A882984E7F600368DE1 /* CrewRepository.swift */; };
 		EEF14A8B2984ED7200368DE1 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */; };
 		EEF14A8D2984EF3A00368DE1 /* CrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8C2984EF3A00368DE1 /* CrewService.swift */; };
+		EEF14A8F2984F93E00368DE1 /* NewCrewModalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8E2984F93E00368DE1 /* NewCrewModalModifier.swift */; };
 		EEF449142966CEEE0014687E /* QuizProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449122966CEEE0014687E /* QuizProgressView.swift */; };
 		EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */; };
 		EEF449182966CEF80014687E /* StartQuizModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449162966CEF70014687E /* StartQuizModalView.swift */; };
@@ -215,6 +216,7 @@
 		EEF14A882984E7F600368DE1 /* CrewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRepository.swift; sourceTree = "<group>"; };
 		EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
 		EEF14A8C2984EF3A00368DE1 /* CrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewService.swift; sourceTree = "<group>"; };
+		EEF14A8E2984F93E00368DE1 /* NewCrewModalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCrewModalModifier.swift; sourceTree = "<group>"; };
 		EEF449122966CEEE0014687E /* QuizProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProgressView.swift; sourceTree = "<group>"; };
 		EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizAnswerButtonView.swift; sourceTree = "<group>"; };
 		EEF449162966CEF70014687E /* StartQuizModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartQuizModalView.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				EE48C36C2982CDC3004D594A /* NewCrewAlertView.swift */,
+				EEF14A8E2984F93E00368DE1 /* NewCrewModalModifier.swift */,
 			);
 			path = NewCrew;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 			files = (
 				EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */,
 				EEFD94132959F7420064AD31 /* FlipView.swift in Sources */,
+				EEF14A8F2984F93E00368DE1 /* NewCrewModalModifier.swift in Sources */,
 				EE57A49A297CCC6100051DBB /* MatchingRepository.swift in Sources */,
 				EE48C3692982CC87004D594A /* CustomAlertModifier.swift in Sources */,
 				EE3D109C294015910010181B /* GoogleAuthService.swift in Sources */,

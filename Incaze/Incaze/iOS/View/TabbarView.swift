@@ -10,6 +10,8 @@ import SwiftUI
 struct TabbarView: View {
     var body: some View {
         TabView{
+            
+            CrewListView(viewModel: CrewListViewModel(service: CrewServiceServiceImpl(crewRepo: CrewRepositoryImpl())))
             HomeView()
                 .tabItem{
                     Image(systemName: "list.star")

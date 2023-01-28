@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewCrewAlertView: View {
+
     @Binding var isPresented: Bool
     @State var crewNameText : String = ""
     @State var noticeText : String = ""
@@ -15,6 +16,7 @@ struct NewCrewAlertView: View {
     @State var gradeIdx = 0
     @State var missionDateIdx = 0
     @State var missionCount = 0
+ 
     
      var missionDateArr : [String] = ["매일", "매주", "격일마다", "3일마다"]
     var conditionArr = ["모집중", "승인필요", "모집중단"]
@@ -25,7 +27,7 @@ struct NewCrewAlertView: View {
     let title: String
     let message: String
     let primaryButtonTitle: String
-    let primaryAction: () -> Void
+    let primaryAction: (String, String, Int, String) -> ()
     let withCancelButton: Bool
 
     var body: some View {
@@ -162,8 +164,16 @@ struct NewCrewAlertView: View {
           }
 
           Button {
-            primaryAction()
+              //(name: <#T##String#>,
+          //type: <#T##String#>,
+         // maxCount: <#T##Int#>,
+          //minimumGrade: <#T##String#>)
+              primaryAction(self.crewNameText,
+                            self.conditionArr[self.conditionIdx],
+                            50,
+                            self.minimumGrade[self.gradeIdx])
             isPresented = false
+              
           } label: {
             Text(primaryButtonTitle)
               .bold()
@@ -187,13 +197,17 @@ struct NewCrewAlertView: View {
     }
 }
 
+
 struct NewCrewAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        NewCrewAlertView( isPresented: .constant(true),
+        NewCrewAlertView(
+                          isPresented: .constant(true),
                           title: "New Crew",
                           message: "메시지메시지메시지~",
                           primaryButtonTitle: "확인!",
-                          primaryAction: { },
+                          primaryAction: {_,_,_,_ in
+                              
+                          },
                           withCancelButton: true)
     }
 }
