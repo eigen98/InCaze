@@ -22,4 +22,5 @@ struct CrewModel : Codable, Identifiable{
     var mission : String?
     var missionLevel : Int?
     var missionCondition : String //없음, 매주, 매일, 3일마다, 격일마다
+    var notice : String? //공지
 }

@@ -11,10 +11,12 @@ import Combine
 protocol CrewService {
     //MARK: create new crew
     func createCrew(crew : CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
-    
+    //MARK: get crew List
+    func getCrewList() ->  AnyPublisher<[CrewModel], CrewRepoError>
 }
 
 class CrewServiceServiceImpl : CrewService {
+   
    
     
     let crewRepo : CrewRepository
@@ -26,4 +28,9 @@ class CrewServiceServiceImpl : CrewService {
     func createCrew(crew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError> {
         return crewRepo.createCrew(crew: crew)
     }
+    //MARK: get crew List
+    func getCrewList() -> AnyPublisher<[CrewModel], CrewRepoError> {
+        return crewRepo.getCrewListData()
+    }
+    
 }

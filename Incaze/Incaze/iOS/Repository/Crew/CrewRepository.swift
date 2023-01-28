@@ -28,7 +28,7 @@ protocol CrewRepository{
     //func postCompleteDate() -> AnyPublisher<String?, CrewRepoError>
     
     //TODO: 크루 리스트 조회
-    
+    func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError >
     //상대 유저 선택 가능한 경우
     //func createRunningChannel() -> AnyPublisher<String?, RunningRepoError>
     
@@ -36,6 +36,8 @@ protocol CrewRepository{
 }
 
 class CrewRepositoryImpl : CrewRepository{
+    
+    
     
     var db : Firestore
     init(){
@@ -58,6 +60,45 @@ class CrewRepositoryImpl : CrewRepository{
                 }
         }.eraseToAnyPublisher()
         
+    }
+    /*
+     //MARK: 크루 리스트 조회
+     */
+    func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError> {
+        return Future<[CrewModel], CrewRepoError>{observer in
+            self.db.collection("Crew")
+                .getDocuments{(snapshot, error) in
+                    if let error = error{
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    
+                    guard let snapshot = snapshot else{
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    
+                    var crewList = [CrewModel]()
+                    
+                    snapshot.documents.forEach{doc in
+                        do{
+                            
+                            var crew = try doc.data(as: CrewModel.self)
+                            print("crew : \(crew)")
+                            crewList.append(crew)
+                        }catch{
+                            print(error)
+                        }
+                        
+                    }
+                    print("crewList : \(crewList)")
+                    observer(.success(crewList))
+                    
+                    
+                    
+                }
+            
+        }.eraseToAnyPublisher()
     }
     
     

@@ -9,6 +9,12 @@ import SwiftUI
 
 struct CrewListCellView: View {
     var deviceWidth = UserManager.shared.deviceWidth
+    
+    var crew : CrewModel
+    init( crew: CrewModel) {
+       
+        self.crew = crew
+    }
     var body: some View {
         
         VStack{
@@ -30,11 +36,11 @@ struct CrewListCellView: View {
               
                 
                 VStack{
-                    Text("구스트원")
+                    Text(crew.crewName)
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .bold))
                     
-                    Text("모집중")
+                    Text("\(crew.type)")
                         .foregroundColor(Color.init(red: 141/255, green:  223/255, blue:  175/255))
                         .font(.system(size: 16, weight: .bold))
                 }
@@ -44,7 +50,7 @@ struct CrewListCellView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .bold))
                     
-                    Text("35/60")
+                    Text("\(crew.memberCount)/\(crew.limitMember)")
                         .foregroundColor(Color.init(red: 241/255, green:  185/255, blue:  67/255))
                         .font(.system(size: 16, weight: .bold))
                 }
@@ -54,7 +60,7 @@ struct CrewListCellView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .bold))
                     
-                    Text("Newbie")
+                    Text("\(crew.minimumGrade)")
                         .foregroundColor(Color.init(red: 241/255, green:  185/255, blue:  67/255))
                         .font(.system(size: 16, weight: .bold))
                 }
@@ -74,6 +80,14 @@ struct CrewListCellView: View {
 
 struct CrewListCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CrewListCellView()
+        CrewListCellView(crew: CrewModel(id: "",
+                                         crewName: "",
+                                         leaderId: "",
+                                         type: "",
+                                         users: [],
+                                         limitMember: 5,
+                                         memberCount: 5,
+                                         minimumGrade: "Newbie",
+                                         missionCondition: "11"))
     }
 }

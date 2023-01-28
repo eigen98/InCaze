@@ -57,8 +57,8 @@ struct CrewListView: View {
                     }
                     
                     Section(){
-                        ForEach(viewModel.crewList){_ in
-                            CrewListCellView()
+                        ForEach(viewModel.crewList){crew in
+                            CrewListCellView(crew: crew)
                                 .padding(.vertical,4)
                         }
                     }
@@ -67,6 +67,9 @@ struct CrewListView: View {
                 
               
               
+            }
+            .onAppear{
+                viewModel.getCrewList()
             }
             .background(Color.init(red: 46/255, green: 60/255, blue: 87/255))
             VStack{
