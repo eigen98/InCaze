@@ -47,7 +47,7 @@ struct BoardListView: View {
                     }
                 }
                 .padding()
-            }
+            }.background(Color.init(red: 30/255, green: 26/255, blue: 62/255))
         }
 
         struct Item {

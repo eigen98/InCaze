@@ -81,14 +81,14 @@ extension LocationService: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("locationManager :  \(locations)")
-        if manager.activityType == .fitness{
+        //if manager.activityType == .fitness{
             locations
                 .filter { $0.horizontalAccuracy >= 0 }
                 .forEach {
                     locationPublisher.send($0)
                     speedPublisher.send(max(0, $0.speed))
                 }
-        }
+        //}
         
     }
 

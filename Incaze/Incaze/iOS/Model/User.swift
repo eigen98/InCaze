@@ -39,8 +39,14 @@ struct User : Codable, Identifiable{
     var isHuman : Bool?
     var image : String?
     var isSelectable : Bool // 상대 선택 가능 여부 : 최근 게임에서 이겼을 경우 false , 졌을 경우 true
+    var grade : String? //등급
+    var lastMissionClearedAt : String? // 마지막 미션 수행, 해당 크루의 미션이 일치해야함.
+    var crew : String? //크루
+    
+    
     //    var pushToken : PushToken
 //    var archive : Archive
+    //마지막 미션 수행 날짜
     
     
 }

@@ -40,6 +40,7 @@ class RunningViewModel : ObservableObject{
         // debounce : 이벤트 간에 지정된 시간이 경과된 후에만 요소를 게시합니다.
         locationService.ready()
         locationService.start()
+        
         runService.start()
         
         //Speed
@@ -56,10 +57,16 @@ class RunningViewModel : ObservableObject{
             }
             .store(in: &cancellable)
         
+        
+        
+        location = locationService.location
+            .sink {
+                print("location : \($0)")
+                self.location}
         //Distance
         runService.distance
-            .debounce(for: .seconds(3), scheduler: RunLoop.main)
-            .removeDuplicates()
+            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+            //.removeDuplicates()
             .map { self.distance($0, unit: Settings.shared.distanceUnit) }
             //.assign(to: \.value, on: self)
             .sink{
@@ -67,7 +74,9 @@ class RunningViewModel : ObservableObject{
                 print("now distance : \(value)")
                 var result = value
                 print("runService distance : \(self.channelId)")
+                result.removeLast(2)
                 if self.channelId.count > 0{
+                    print("update my data \(result)")
                     self.repository.updateMyRunningData(channelId: self.channelId, distance: Double(result) ?? 0.0)
                 }
                 if Double(result) ?? 0.0 > 0.3{
@@ -79,12 +88,6 @@ class RunningViewModel : ObservableObject{
                 self.distance = "\(result.removeLast(2))"
             }
             .store(in: &cancellable)
-        
-        location = locationService.location
-            .sink {
-                print("location : \($0)")
-                self.location}
-        
         
         
     }
@@ -107,13 +110,15 @@ class RunningViewModel : ObservableObject{
             do{
                 try await myRef.setValue(newData)
                 try await oppRef.setValue(newData)
+                
+               
                 observeOppUserScore()
             }catch{
                 print("addRunningChannel error : \(error)")
             }
             
         }
-       
+        
         
     }
     

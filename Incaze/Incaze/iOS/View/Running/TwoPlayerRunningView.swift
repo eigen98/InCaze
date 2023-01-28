@@ -193,12 +193,12 @@ struct TwoPlayerRunningView: View {
                     TimesUpView()
                         .offset(.init(width: 0, height: size/2 - 60))
                         .onAppear{
-                            viewModel.countDown(completion: {
-                                //presentationMode.wrappedValue.dismiss()
-                                //NavigationUtil.popToRootView()
-                                //TODO: 종료
-                                showEndRunModal()
-                            })
+//                            viewModel.countDown(completion: {
+//                                //presentationMode.wrappedValue.dismiss()
+//                                //NavigationUtil.popToRootView()
+//                                //TODO: 종료
+//                                showEndRunModal()
+//                            })
                         }
                 }
                 
@@ -251,10 +251,11 @@ struct TwoPlayerRunningView: View {
      시작 모달 보여주기
      */
     func showStartRunModal(){
+        viewModel.addRunningChannel(myId: UserManager.shared.id, oppId: viewModel.oppUser.id)
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
             StartQuizModalView()
                 .onAppear{
-                    viewModel.addRunningChannel(myId: UserManager.shared.id, oppId: viewModel.oppUser.id)
+                    
                 }
         }
     }
