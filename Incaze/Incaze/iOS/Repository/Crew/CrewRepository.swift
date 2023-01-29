@@ -15,26 +15,29 @@ enum CrewRepoError: Error{
     case failGetCrewData
     case failCreateNewCrew
     case failUpdateCrewData
+    case failDeleteCrew
     
 }
 
 protocol CrewRepository{
     //MARK: 크루 생성
     func createCrew(crew : CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
+    
+    //TODO: 크루 중복 확인
+    func doubleCheckCrewName(name : String) -> AnyPublisher<Bool, CrewRepoError>
+    
     //MARK: 크루 상세 정보 조회
     func getCrewData(crewId : String) -> AnyPublisher<CrewModel?, CrewRepoError>
     //MARK: 크루 정보 업데이트
     func updateCrewData(crewId : String, editedCrew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
-    //TODO: 크루 삭제
-    //func postCompleteDate() -> AnyPublisher<String?, CrewRepoError>
+    //MARK: 크루 삭제
+    func deleteCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>
     
     //TODO: 크루 리스트 조회
     func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError >
     
     //TODO: 불가능한 경우
     
-    //MARK: get crew 상세정보
-   // func getCrewDetail(crewId : String) -> AnyPublisher<CrewModel?, CrewRepoError>
     //MARK: 가입 요청
     
     //MARK: 가입 요청 메시지 조회
@@ -47,6 +50,8 @@ protocol CrewRepository{
 }
 
 class CrewRepositoryImpl : CrewRepository{
+    
+    
     
   
     
@@ -65,8 +70,8 @@ class CrewRepositoryImpl : CrewRepository{
     func createCrew(crew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError> {
         let dictionary = crew.asDictionary ?? ["crew" : "fail"]
         return Future<CrewModel?, CrewRepoError>{ observer in
-            self.db.collection("Crew")
-                .addDocument(data: dictionary){error in
+            self.db.collection("Crew").document("\(crew.crewName)")
+                .setData(dictionary){error in
                     if let error = error{
                         return observer(.failure(CrewRepoError.failCreateNewCrew))
                         
@@ -76,6 +81,13 @@ class CrewRepositoryImpl : CrewRepository{
                 }
         }.eraseToAnyPublisher()
         
+    }
+    
+    //MARK: 크루 이름 중복 확인
+    func doubleCheckCrewName(name: String) -> AnyPublisher<Bool, CrewRepoError> {
+        return Future<Bool, CrewRepoError>{observer in
+            
+        }
     }
     /*
      //MARK: 크루 리스트 조회
@@ -164,7 +176,24 @@ class CrewRepositoryImpl : CrewRepository{
         }.eraseToAnyPublisher()
     }
     
+    //MARK: 크루 삭제
+    func deleteCrew(crewId: String) -> AnyPublisher<String?, CrewRepoError> {
+        return Future<String?, CrewRepoError>{observer in
+            
+            self.db.collection("Crew").document(crewId).delete(){error in
+                if let error = error{
+                    print(error)
+                    observer(.failure(CrewRepoError.failDeleteCrew))
+                }
+                observer(.success("크루를 삭제하였습니다."))
+                
+            }
+        }
+        .eraseToAnyPublisher()
+    }
    
+    
+    
     
     
 }

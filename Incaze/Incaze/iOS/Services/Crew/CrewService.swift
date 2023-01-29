@@ -16,8 +16,12 @@ protocol CrewService {
     //MARK: get crew 상세정보
     func getCrewDetail(crewId : String) -> AnyPublisher<CrewModel?, CrewRepoError>
     
-    //MARK: update Crew
+    //MARK: Crew 정보 업데이트(크루이름, 모집상태, 미션조건)
     func updateMyCrew(crewId: String, editedCrew : CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
+    
+    //MARK: 크루 삭제
+    func deleteMyCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>
+    
     //MARK: 가입 요청
     
     //MARK: 가입 요청 메시지 조회
@@ -57,5 +61,10 @@ class CrewServiceServiceImpl : CrewService {
     func updateMyCrew(crewId: String, editedCrew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError> {
         return crewRepo.updateCrewData(crewId: crewId, editedCrew: editedCrew)
     }
+    //MARK: 크루 삭제
+    func deleteMyCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>{
+        return crewRepo.deleteCrew(crewId: crewId)
+    }
+    
     
 }
