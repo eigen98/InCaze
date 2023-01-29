@@ -14,28 +14,41 @@ enum CrewRepoError: Error{
     case notFoundCrewData
     case failGetCrewData
     case failCreateNewCrew
+    case failUpdateCrewData
     
 }
 
 protocol CrewRepository{
     //MARK: 크루 생성
     func createCrew(crew : CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
-    //TODO: 크루 상세 정보 조회
-    //func getCrewData(channelId : String, oppUserId : String) -> AnyPublisher<Double?, CrewRepoError>
-    //TODO: 크루 정보 업데이트
-    //func updateCrewData(channelId : String, distance: Double) -> AnyPublisher<Double?, CrewRepoError>
+    //MARK: 크루 상세 정보 조회
+    func getCrewData(crewId : String) -> AnyPublisher<CrewModel?, CrewRepoError>
+    //MARK: 크루 정보 업데이트
+    func updateCrewData(crewId : String, editedCrew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
     //TODO: 크루 삭제
     //func postCompleteDate() -> AnyPublisher<String?, CrewRepoError>
     
     //TODO: 크루 리스트 조회
     func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError >
-    //상대 유저 선택 가능한 경우
-    //func createRunningChannel() -> AnyPublisher<String?, RunningRepoError>
     
     //TODO: 불가능한 경우
+    
+    //MARK: get crew 상세정보
+   // func getCrewDetail(crewId : String) -> AnyPublisher<CrewModel?, CrewRepoError>
+    //MARK: 가입 요청
+    
+    //MARK: 가입 요청 메시지 조회
+    //MARK: 가입 요청 메시지 수락
+    
+    //MARK: 바로 가입
+    
+    //MARK: 크루 탈퇴
+    //MARK: 크루 멤버 강퇴
 }
 
 class CrewRepositoryImpl : CrewRepository{
+    
+  
     
     
     
@@ -43,6 +56,9 @@ class CrewRepositoryImpl : CrewRepository{
     init(){
         db = Firestore.firestore()
     }
+    
+    
+    
     /*
      //MARK: 크루 생성
      */
@@ -101,7 +117,54 @@ class CrewRepositoryImpl : CrewRepository{
         }.eraseToAnyPublisher()
     }
     
+    //TODO: 크루 상세 정보 조회
+    //CrewId 필요
+    func getCrewData(crewId: String) -> AnyPublisher<CrewModel?, CrewRepoError> {
+        return Future<CrewModel?, CrewRepoError>{observer in
+            self.db.collection("Crew").document("")
+                .getDocument{ snapshot, error in
+                    if let error = error{
+                        print(error)
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    
+                    guard let snapshot = snapshot else{
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    var crew : CrewModel? = nil
+                    do{
+                        var crew = try snapshot.data(as: CrewModel.self)
+                        
+                    }catch{
+                        print(error)
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                    }
+                    
+                    observer(.success(crew))
+                }
+        }.eraseToAnyPublisher()
+        
+    }
     
+    //MARK: 크루 정보 업데이트(크루 모집 상태, 미션 조건, 크루이름)
+    func updateCrewData(crewId: String, editedCrew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError> {
+        let dictionary = editedCrew.asDictionary ?? ["crew" : "fail"]
+        return Future<CrewModel?, CrewRepoError>{observer in
+            self.db.collection("Crew")
+                .document(crewId).setData(dictionary){error in
+                    if error != nil{
+                        observer(.failure(CrewRepoError.failUpdateCrewData))
+                        return
+                    }
+                    
+                    observer(.success(editedCrew))
+                }
+        }.eraseToAnyPublisher()
+    }
+    
+   
     
     
 }
