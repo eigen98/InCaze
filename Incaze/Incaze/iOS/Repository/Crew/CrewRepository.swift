@@ -34,13 +34,12 @@ protocol CrewRepository{
     func deleteCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>
     
     //TODO: 크루 리스트 조회
-    func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError >
-    
-    //TODO: 불가능한 경우
+    func getCrewListData() -> AnyPublisher<[CrewModel], CrewRepoError>
     
     //MARK: 가입 요청
-    
+    func requestJoinCrew(crewId : String, myInfo : User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 가입 요청 메시지 조회
+    
     //MARK: 가입 요청 메시지 수락
     
     //MARK: 바로 가입
@@ -50,13 +49,10 @@ protocol CrewRepository{
 }
 
 class CrewRepositoryImpl : CrewRepository{
+
     
-    
-    
-  
-    
-    
-    
+   
+
     var db : Firestore
     init(){
         db = Firestore.firestore()
@@ -204,7 +200,25 @@ class CrewRepositoryImpl : CrewRepository{
         .eraseToAnyPublisher()
     }
    
+    //MARK: 가입 요청
+    func requestJoinCrew(crewId : String, myInfo : User) -> AnyPublisher<User, CrewRepoError> {
+        let dictionary = myInfo.asDictionary ?? ["crew" : "fail"]
+        return Future<User, CrewRepoError>{observer in
+            
+            self.db.collection("CrewRequest").document(crewId)
+                .collection("request").document("\(myInfo.id)")
+                .setData(dictionary){error in
+                    if error != nil{
+                        observer(.failure(CrewRepoError.failUpdateCrewData))
+                        return
+                    }
+
+                    observer(.success(myInfo))
+                }
+        }.eraseToAnyPublisher()
+    }
     
+    //MARK:
     
     
     

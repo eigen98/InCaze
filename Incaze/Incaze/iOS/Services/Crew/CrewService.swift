@@ -26,7 +26,7 @@ protocol CrewService {
     func deleteMyCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>
     
     //MARK: 가입 요청
-    
+    func requestJoinCrew(crewId : String, myInfo : User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 가입 요청 메시지 조회
     //MARK: 가입 요청 메시지 수락
     
@@ -73,6 +73,11 @@ class CrewServiceServiceImpl : CrewService {
     //MARK: 크루 삭제
     func deleteMyCrew(crewId : String) -> AnyPublisher<String?, CrewRepoError>{
         return crewRepo.deleteCrew(crewId: crewId)
+    }
+    
+    //MARK: 가입 요청
+    func requestJoinCrew(crewId : String, myInfo : User) -> AnyPublisher<User, CrewRepoError> {
+        return crewRepo.requestJoinCrew(crewId: crewId, myInfo: myInfo)
     }
     
     
