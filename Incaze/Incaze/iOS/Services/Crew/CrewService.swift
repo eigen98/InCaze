@@ -11,6 +11,9 @@ import Combine
 protocol CrewService {
     //MARK: create new crew
     func createCrew(crew : CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError>
+    //MARK: 크루 이름 중복확인
+    func doubleCheckCrewName(crewName : String) -> AnyPublisher<Bool, CrewRepoError>
+    
     //MARK: get crew List
     func getCrewList() ->  AnyPublisher<[CrewModel], CrewRepoError>
     //MARK: get crew 상세정보
@@ -37,6 +40,8 @@ protocol CrewService {
 }
 
 class CrewServiceServiceImpl : CrewService {
+   
+    
     
    
     let crewRepo : CrewRepository
@@ -47,6 +52,10 @@ class CrewServiceServiceImpl : CrewService {
     //MARK: create new crew
     func createCrew(crew: CrewModel) -> AnyPublisher<CrewModel?, CrewRepoError> {
         return crewRepo.createCrew(crew: crew)
+    }
+    //MARK: 크루 이름 중복 확인
+    func doubleCheckCrewName(crewName: String) -> AnyPublisher<Bool, CrewRepoError> {
+        return crewRepo.doubleCheckCrewName(name: crewName)
     }
     //MARK: get crew List
     func getCrewList() -> AnyPublisher<[CrewModel], CrewRepoError> {

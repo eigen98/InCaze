@@ -86,8 +86,20 @@ class CrewRepositoryImpl : CrewRepository{
     //MARK: 크루 이름 중복 확인
     func doubleCheckCrewName(name: String) -> AnyPublisher<Bool, CrewRepoError> {
         return Future<Bool, CrewRepoError>{observer in
+            self.db.collection("Crew").document(name)
+                .getDocument(){snapshot, error in
+                    
+                    //이름 중복됨
+                    if let snapshot, snapshot.exists{
+                        observer(.success(false))
+                    }else{
+                        //이름 사용 가능
+                        observer(.success(true))
+                    }
+                   
+                }
             
-        }
+        }.eraseToAnyPublisher()
     }
     /*
      //MARK: 크루 리스트 조회
