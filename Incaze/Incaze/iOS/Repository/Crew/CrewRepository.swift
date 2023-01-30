@@ -39,20 +39,20 @@ protocol CrewRepository{
     //MARK: 가입 요청
     func requestJoinCrew(crewId : String, myInfo : User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 가입 요청 메시지 조회
+    func getRequestJoinMessages(crewId: String) -> AnyPublisher<[User], CrewRepoError>
     
-    //MARK: 가입 요청 메시지 수락
+    //MARK: 가입 요청 메시지 삭제(수락 & 거절 시 메시지 삭제)
+    func deleteRequestJoinMessage(crewId: String, userId : String) -> AnyPublisher<String, CrewRepoError>
     
-    //MARK: 바로 가입
-    
+    //MARK: 크루 가입 (요청 승인 시 deleteRequestJoinMessage 호출 필요)
+    func postNewUserCrewMember(crewId: String, user: User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 크루 탈퇴
+    //func deleteUserCrewMember(crewId: String, userId : String)
     //MARK: 크루 멤버 강퇴
 }
 
 class CrewRepositoryImpl : CrewRepository{
-
     
-   
-
     var db : Firestore
     init(){
         db = Firestore.firestore()
@@ -218,8 +218,86 @@ class CrewRepositoryImpl : CrewRepository{
         }.eraseToAnyPublisher()
     }
     
-    //MARK:
+    //MARK: 가입 요청 메시지 조회
+    func getRequestJoinMessages(crewId: String) -> AnyPublisher<[User], CrewRepoError>{
+        return Future<[User], CrewRepoError>{observer in
+            self.db.collection("CrewRequest").document(crewId)
+                .collection("request")
+                .getDocuments{(snapshot, error) in
+                    if let error = error{
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    
+                    guard let snapshot = snapshot else{
+                        observer(.failure(CrewRepoError.failGetCrewData))
+                        return
+                    }
+                    
+                    var requestList = [User]()
+                    
+                    snapshot.documents.forEach{doc in
+                        do{
+                            
+                            var userRequest = try doc.data(as: User.self)
+                            print("userRequest : \(userRequest)")
+                            requestList.append(userRequest)
+                        }catch{
+                            print(error)
+                        }
+                        
+                    }
+                    print("requestList : \(requestList)")
+                    observer(.success(requestList))
+                    
+                    
+                    
+                }
+            
+        }.eraseToAnyPublisher()
+    }
     
     
     
+    //MARK: 가입 요청 메시지 삭제(수락 & 거절 시 메시지 삭제)
+    func deleteRequestJoinMessage(crewId: String, userId: String) -> AnyPublisher<String, CrewRepoError> {
+        return Future<String, CrewRepoError>{observer in
+            
+            self.db.collection("CrewRequest").document(crewId).collection("request").document(userId).delete(){error in
+                if let error = error{
+                    print(error)
+                    observer(.failure(CrewRepoError.failDeleteCrew))
+                }
+                observer(.success("가입 요청 메시지 처리상태 변경"))
+                
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    //MARK: 크루 멤버추가 (요청 승인 시 deleteRequestJoinMessage 호출 필요)
+    func postNewUserCrewMember(crewId: String,user: User) -> AnyPublisher<User, CrewRepoError> {
+        return Future<User, CrewRepoError>{observer in
+            self.db.collection("Crew").document(crewId)
+                .updateData(["users" : FieldValue.arrayUnion([user])
+                            ]){error in
+                    if let error = error {
+                        print(error)
+                        observer(.failure(CrewRepoError.failDeleteCrew))
+                        return
+                    }
+                    observer(.success(user))
+                    
+                }
+            
+            
+        }.eraseToAnyPublisher()
+    }
+    
+    
+    
+
+    
+   
+
 }
