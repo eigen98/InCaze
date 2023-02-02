@@ -20,6 +20,9 @@ class CrewListViewModel : ObservableObject{
     @Published var crewList : [CrewModel] = [ ]
     //CrewModel(id: "", crewName: "런린이만 기기링", leaderId: "ko_su", type: "모집중", users: [], limitMember: 20, memberCount: 5, minimumGrade: "Newbie", missionCondition: "없음")
     
+    /*
+     CrewList 목록 가져오기
+     */
     func getCrewList(){
         print("getCrewList()")
         service.getCrewList()
@@ -39,7 +42,9 @@ class CrewListViewModel : ObservableObject{
     }
         
                 
-    
+    /*
+     크루 생성
+     */
     func createNewCrew(name: String, type : String, maxCount : Int, minimumGrade : String ){
         
         var myId = UserManager.shared.id
@@ -74,8 +79,13 @@ class CrewListViewModel : ObservableObject{
                 }
             }, receiveValue: {value in
                 print("createCrew Result :\(value)")
-                
+                //업로드 후 fetch
+                self.getCrewList()
             })
             .store(in: &bag)
     }
+    
+    
+    
+    
 }

@@ -72,8 +72,13 @@ struct CrewListView: View {
                     }
                     
                     
+                    
                   
                   
+                }
+                //업데이트
+                .refreshable {
+                    viewModel.getCrewList()
                 }
                 .onAppear{
                     viewModel.getCrewList()

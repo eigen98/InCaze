@@ -15,6 +15,18 @@ class UserManager {
     static let shared = UserManager()
     var deviceWidth = UIScreen.main.bounds.width
 
+    static func getMe() -> User{
+        return User(id: self.shared.id,
+                    email: shared.email,
+                    status: 0,
+                    nickname: shared.nickname ?? "",
+                    createdAt: shared.createdAt,
+                    updatedAt: shared.updatedAt,
+                    isSelectable: shared.isSelectable,
+                    crewId: shared.crewId
+        )
+    }
+    
     
     var jwt: String {
         get {
@@ -34,6 +46,15 @@ class UserManager {
         }
     }
     
+    var crewId: String {
+        get {
+            return KeychainSwift().get("crewId") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "crewId")
+        }
+    }
+    
     var id: String {
         get {
             return KeychainSwift().get("id") ?? ""
@@ -50,6 +71,35 @@ class UserManager {
         set {
             KeychainSwift().set(newValue, forKey: "image")
         }
+    }
+    
+    var createdAt: String {
+        get {
+            return KeychainSwift().get("createdAt") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "createdAt")
+        }
+    }
+    
+    var updatedAt: String {
+        get {
+            return KeychainSwift().get("updated") ?? ""
+        }
+        set {
+            KeychainSwift().set(newValue, forKey: "updated")
+        }
+    }
+    
+    var isSelectable: Bool {
+        
+        get {
+            return UserDefaults.standard.bool(forKey: "isSelectable") ?? false//KeychainSwift().get("fullLocation") ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "isSelectable") //KeychainSwift().set(newValue, forKey: "fullLocation")
+        }
+        
     }
     
     /*

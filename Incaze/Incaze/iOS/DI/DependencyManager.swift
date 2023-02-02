@@ -54,7 +54,7 @@ class DependencyManager {
         container.register(CrewRepository.self) { _ in CrewRepositoryImpl() }
     }
     
-//    func resolve<Service>(_ serviceType: Service.Type) -> Service? {
-//        return container.resolve(serviceType)
-//    }
+    func resolve<Service>(_ serviceType: Service.Type) -> Service? {
+        return container.resolve(serviceType)
+    }
 }

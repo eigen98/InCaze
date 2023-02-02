@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import Combine
+
 enum CrewDetailUserStatus{
     case independent //무소속
     case otherTeam //다른 팀
@@ -17,6 +19,8 @@ enum CrewDetailUserStatus{
 struct CrewInfoHeaderView: View {
     @Binding var crewInfo : CrewModel?
 
+    var buttonClosure : (() -> ())?
+    @Binding var buttonText : String
     
     var myStatus : CrewDetailUserStatus = .independent
     
@@ -39,13 +43,18 @@ struct CrewInfoHeaderView: View {
                             .foregroundColor(.white)
                             .font(.system(size: 20, weight: .bold))
                     }
+                    //버튼 (요청, 가입, 탈퇴, 삭제)
                     Button {
-                      
-                      
+                        
+                        buttonClosure?()
+                        
                     } label: {
-                      Text("요청") //편집
-                        .font(.system(size: 20, weight: .bold))
-                        .padding(.vertical, 4)
+                        if buttonText.count > 0{
+                            Text(buttonText)
+                              .font(.system(size: 20, weight: .bold))
+                              .padding(.vertical, 4)
+                        }
+                     
                         
                     }
                     .buttonStyle(.borderedProminent)
@@ -131,8 +140,7 @@ struct CrewInfoHeaderView: View {
                     .stroke(Color.init(red: 92/255, green:  92/255, blue:  119/255), lineWidth: 2)
                 )
         }
-        
-        
+
     }
 }
 
@@ -146,6 +154,6 @@ struct CrewInfoHeaderView_Previews: PreviewProvider {
                                                           limitMember: 0,
                                                           memberCount: 0,
                                                           minimumGrade: "",
-                                                          missionCondition: "")) )
+                                                          missionCondition: "")), buttonText: .constant("") )
     }
 }

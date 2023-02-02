@@ -7,23 +7,21 @@
 
 import Foundation
 import Combine
-
+//크루 상세 화면
 class CrewDetailViewModel : ObservableObject{
-    var users : [User] = [
-        User(id: "ko_su", email: "ko_su", status: 0, nickname: "도도", createdAt: "", updatedAt: "", isSelectable: false),
-        User(id: "ko_su1", email: "ko_su", status: 0, nickname: "구구", createdAt: "", updatedAt: "", isSelectable: false),
-        User(id: "ko_su2", email: "ko_su", status: 0, nickname: "오레오", createdAt: "", updatedAt: "", isSelectable: false),
-        User(id: "ko_su3", email: "ko_su", status: 0, nickname: "프링글스", createdAt: "", updatedAt: "", isSelectable: false),
-        User(id: "ko_su4", email: "ko_su", status: 0, nickname: "도리토스", createdAt: "", updatedAt: "", isSelectable: false),
-    
-    ]
-    
-    var crewPublisher = PassthroughSubject<CrewModel, Never>()
-    
     
     private var bag = Set<AnyCancellable>()
+    
+    var crewPublisher = PassthroughSubject<CrewModel, Never>()
+    var isDeleted = CurrentValueSubject<Bool, Never>(false)
+    @Published var crew : CrewModel? = nil
+    
+    
+    
     var service : CrewService
     var crewId : String
+
+    
     
     init(service: CrewService, crewId : String) {
         self.service = service
@@ -35,14 +33,73 @@ class CrewDetailViewModel : ObservableObject{
         service.getCrewDetail(crewId: self.crewId)
             .sink(receiveCompletion: {result in
                 print(result)
-            }, receiveValue: { value in
+            }, receiveValue: {[weak self] value in
                 if let value = value{
-                    self.crewPublisher.send(value)
+                    self?.crew = value
+                    self?.crewPublisher.send(value)
+                    
                     print("value : \(value)")
                 }
                
                
             }).store(in: &bag)
+        
+    }
+    
+    func requestJoin(){
+        //미가입 상태
+        
+        service.requestJoinCrew(crewId: crewId, myInfo: UserManager.getMe())
+            .sink(receiveCompletion: {completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Fetch posts failed: \(error)")
+                    
+                }
+                    
+            }, receiveValue: {[weak self] user in
+                print("요청 완료")
+                
+            })
+            .store(in: &bag)
+    }
+    
+    func deleteMyCrew(){
+        service.deleteMyCrew(crewId: crewId)
+            .sink(receiveCompletion: {completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Fetch posts failed: \(error)")
+                    
+                }
+                    
+            }, receiveValue: {[weak self] result in
+                print("삭제 완료")
+                self?.isDeleted.send(true)
+            })
+            .store(in: &bag)
+    }
+    
+    func buttonClosure(){
+        var me = UserManager.getMe()
+        //내가 만든 크루인경우
+        if me.id == crew?.leaderId ?? ""{
+            deleteMyCrew()
+        }
+        //가입한 크루가 없는 경우.
+        else if me.crewId?.count == 0 || me.crewId == nil{
+            //승인이 필요한 경우
+            requestJoin()
+            //바로 가입 가능한 경우
+            
+        }
+        //이미 크루에 가입한 경우 X
+        
+        
         
     }
 }
