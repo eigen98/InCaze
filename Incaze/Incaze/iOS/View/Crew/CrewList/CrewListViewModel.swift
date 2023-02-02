@@ -53,10 +53,10 @@ class CrewListViewModel : ObservableObject{
                       updatedAt: "",
                       isSelectable: false)
         
-        var newCrew = CrewModel(id: "myId_\(name)",
+        var newCrew = CrewModel(id: "\(name)",
                                 crewName: "\(name)",
                                 leaderId: myId,
-                                type: "type",
+                                type: "\(type)",
                                 users: [me],
                                 limitMember: maxCount,
                                 memberCount: 1,

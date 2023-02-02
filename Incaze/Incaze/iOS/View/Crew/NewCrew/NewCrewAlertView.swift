@@ -18,7 +18,7 @@ struct NewCrewAlertView: View {
     @State var missionCount = 0
  
     
-     var missionDateArr : [String] = ["매일", "매주", "격일마다", "3일마다"]
+     var missionDateArr : [String] = ["매일", "매주1회", "격일마다", "3일마다"]
     var conditionArr = ["모집중", "승인필요", "모집중단"]
     
     var minimumGrade = ["없음", "Newbie"]
@@ -57,7 +57,7 @@ struct NewCrewAlertView: View {
                 .bold()
               
               HStack{
-                  Button(action: {  }) {
+                  Button(action: { conditionIdx =  abs(conditionIdx - 1) % 3 }) {
                       Image(systemName: "arrowshape.left.fill")
                   }
                   .buttonStyle(.reative)
@@ -68,7 +68,7 @@ struct NewCrewAlertView: View {
                     .multilineTextAlignment(.leading)
                     .frame(minHeight: 60)
                   
-                  Button(action: {  }) {
+                  Button(action: { conditionIdx =  abs(conditionIdx + 1) % 3 }) {
                       Image(systemName: "arrowshape.right.fill")
                   }
                   .buttonStyle(.reative)
@@ -81,7 +81,7 @@ struct NewCrewAlertView: View {
                 .bold()
               
               HStack{
-                  Button(action: {  }) {
+                  Button(action: { gradeIdx =  abs(gradeIdx - 1) % 2  }) {
                       Image(systemName: "plus.app.fill")
                           .font(.system(size: 20))
                   }
@@ -93,7 +93,7 @@ struct NewCrewAlertView: View {
                     .multilineTextAlignment(.leading)
                     .frame(minHeight: 60)
                   
-                  Button(action: {  }) {
+                  Button(action: { gradeIdx =  abs(gradeIdx + 1) % 2 }) {
                       Image(systemName: "minus.square.fill")
                           .font(.system(size: 20))
                   }
@@ -106,7 +106,7 @@ struct NewCrewAlertView: View {
                 .bold()
               
               HStack{
-                  Button(action: {  }) {
+                  Button(action: { missionDateIdx =  abs(missionDateIdx - 1) % 4  }) {
                       Image(systemName: "arrowshape.left.fill")
                   }
                   .buttonStyle(.reative)
@@ -117,33 +117,14 @@ struct NewCrewAlertView: View {
                     .multilineTextAlignment(.leading)
                     .frame(minHeight: 60)
                   
-                  Button(action: {  }) {
+                  Button(action: { missionDateIdx =  abs(missionDateIdx + 1) % 4 }) {
                       Image(systemName: "arrowshape.right.fill")
                   }
                   .buttonStyle(.reative)
 
               }
               
-              HStack{
-                  Button(action: {  }) {
-                      Image(systemName: "plus.app.fill")
-                          .font(.system(size: 20))
-                  }
-                  .buttonStyle(.reative)
-                  
-                  Text("\(missionCount)번 성공")
-                      .font(.title3)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.leading)
-                    .frame(minHeight: 60)
-                  
-                  Button(action: {  }) {
-                      Image(systemName: "minus.square.fill")
-                          .font(.system(size: 20))
-                  }
-                  .buttonStyle(.reative)
-
-              }
+ 
               
           }
           

@@ -18,6 +18,7 @@ class RunningViewModel : ObservableObject{
     @Published var units = ""
     @Published var distance = "0.0"
     var cancellable = Set<AnyCancellable>()
+    private let distanceSubject = PassthroughSubject<Double, Never>()
     private var location: AnyCancellable?
     var locationService = LocationService()
     var runService = RunService()
@@ -36,6 +37,13 @@ class RunningViewModel : ObservableObject{
         self.value = value
         self.units = units
         self.oppUser = oppUser
+
+        var myId = UserManager.shared.id
+        var oppId = oppUser.id
+        var runningChannelId =  myId > oppId ? myId + "_" + oppId :  oppId + "_" + myId
+        
+        self.channelId = runningChannelId
+        
         self.repository = RunningRepositoryImpl()
         // debounce : 이벤트 간에 지정된 시간이 경과된 후에만 요소를 게시합니다.
         locationService.ready()
@@ -51,46 +59,60 @@ class RunningViewModel : ObservableObject{
             .sink{ value in //Rx Subscribe와 비슷
                 let formatted = self.speed(value, unit: UnitSpeed.metersPerSecond)
                 self.value = formatted.value
-                
+
                 print("speed RunningViewModel \(value)")
-                
+
             }
             .store(in: &cancellable)
         
         
         
-        location = locationService.location
-            .sink {
-                print("location : \($0)")
-                self.location}
+        //location = locationService.location
+//            .assign(to: <#T##ReferenceWritableKeyPath<Root, CLLocation>#>, on: <#T##Root#>)
+//            .sink {
+//                print("location : \($0)")
+//
+//
+//            }
+        
         //Distance
+       
         runService.distance
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-            //.removeDuplicates()
+            .removeDuplicates()
             .map { self.distance($0, unit: Settings.shared.distanceUnit) }
-            //.assign(to: \.value, on: self)
+        //.assign(to: \.value, on: self)
             .sink{
                 value in
                 print("now distance : \(value)")
                 var result = value
                 print("runService distance : \(self.channelId)")
-                result.removeLast(2)
+                result.removeLast(3)
                 if self.channelId.count > 0{
                     print("update my data \(result)")
-                    self.repository.updateMyRunningData(channelId: self.channelId, distance: Double(result) ?? 0.0)
+                    self.updateDistance(distance: Double(result) ?? 9.9)
+                   // self.repository.updateMyRunningData(channelId: self.channelId, distance: Double(result) ?? 0.0)
                 }
                 if Double(result) ?? 0.0 > 0.3{
                     //완주
                     self.repository.postCompleteDate()
                 }
-               
                 
                 self.distance = "\(result.removeLast(2))"
             }
-            .store(in: &cancellable)
-        
-        
+            .store(in: &cancelables)
+        // listens for updates to the running distance.
+        distanceSubject
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .sink(receiveValue: {[weak self] distance in
+                self?.repository.updateMyRunningData(channelId: self?.channelId ?? "", distance: distance)
+            })
+            .store(in: &cancelables)
     }
+    
+    func updateDistance(distance: Double) {
+            distanceSubject.send(distance)
+        }
     
     
     //상대 유저 선택 & 게임 채널 생성 (선택 가능 유저)

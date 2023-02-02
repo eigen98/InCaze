@@ -34,7 +34,7 @@ protocol CrewService {
     //MARK: 가입 요청 메시지 수락
     func approveJoinCrew(crewId: String, user : User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 바로 가입
-    
+    func joinCrew(crewId: String, user : User) -> AnyPublisher<User, CrewRepoError>
     //MARK: 크루 탈퇴
     
     
@@ -43,6 +43,8 @@ protocol CrewService {
 }
 
 class CrewServiceServiceImpl : CrewService {
+    
+    
    
     
     
@@ -99,8 +101,12 @@ class CrewServiceServiceImpl : CrewService {
         return publisher
         
     }
-
+    //MARK: 크루 바로 가입
+    func joinCrew(crewId: String, user: User) -> AnyPublisher<User, CrewRepoError> {
+        return crewRepo.postNewUserCrewMember(crewId: crewId, user: user)
+    }
     
+    //MARK: 크루
 
     
 }

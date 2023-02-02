@@ -15,7 +15,9 @@ import GoogleSignIn
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
+      
+      DependencyManager.shared.register()
+      
       print("firebase init")
       FirebaseApp.configure()
 //      GIDSignIn.sharedInstance = FirebaseApp.app()?.options.clientID
@@ -36,6 +38,7 @@ struct IncazeApp: App {// 앱 수명 주기 관리를 위한 AppDelegate와 Scen
     
     //DI
      //DependencyManager.shared.registerDependencies()
+
     
     @StateObject var loginViewModel = LoginViewModel()
     // register app delegate for Firebase setup

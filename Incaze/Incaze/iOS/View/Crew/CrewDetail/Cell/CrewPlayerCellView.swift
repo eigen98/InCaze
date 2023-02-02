@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CrewPlayerCellView: View {
     var deviceWidth = UserManager.shared.deviceWidth
-    
+    var user : User
     var body: some View {
         
         VStack{
@@ -75,6 +75,6 @@ struct CrewPlayerCellView: View {
 
 struct CrewPlayerCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CrewPlayerCellView()
+        CrewPlayerCellView( user:  User(id: "ko_su", email: "ko_su", status: 0, nickname: "도도", createdAt: "", updatedAt: "", isSelectable: false))
     }
 }

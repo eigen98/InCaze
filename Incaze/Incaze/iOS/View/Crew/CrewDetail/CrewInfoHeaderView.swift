@@ -15,11 +15,8 @@ enum CrewDetailUserStatus{
 }
 
 struct CrewInfoHeaderView: View {
-    var crewNameText : String = "크루 이름"
-    var point : Int = 5022
-    var noticeText : String = "게임은 즐겁게"
-    var maxMemberNum : Int = 50
-    var totalMemberNum : Int = 35
+    @Binding var crewInfo : CrewModel?
+
     
     var myStatus : CrewDetailUserStatus = .independent
     
@@ -34,11 +31,11 @@ struct CrewInfoHeaderView: View {
                         .padding(.horizontal, 20)
                     
                     VStack{
-                        Text(crewNameText)
+                        Text(crewInfo?.crewName ?? "크루이름")
                             .foregroundColor(.white)
                             .font(.system(size: 26, weight: .bold))
                         
-                        Text("\(point)")
+                        Text("\(crewInfo?.type ?? "")")
                             .foregroundColor(.white)
                             .font(.system(size: 20, weight: .bold))
                     }
@@ -75,8 +72,7 @@ struct CrewInfoHeaderView: View {
                         Text("최소 등급")
                             .foregroundColor(.white)
                             .font(.system(size: 20, weight: .bold))
-                        
-                        Text("Newbie")
+                        Text("\(crewInfo?.minimumGrade ?? "")")
                             .foregroundColor(Color.init(red: 241/255, green:  185/255, blue:  67/255))
                             .font(.system(size: 16, weight: .bold))
                     }
@@ -85,8 +81,7 @@ struct CrewInfoHeaderView: View {
                         Text("타입")
                             .foregroundColor(.white)
                             .font(.system(size: 20, weight: .bold))
-                        
-                        Text("승인필요")
+                        Text("\(crewInfo?.type ?? "")")
                             .foregroundColor(Color.init(red: 241/255, green:  185/255, blue:  67/255))
                             .font(.system(size: 16, weight: .bold))
                     }
@@ -95,8 +90,7 @@ struct CrewInfoHeaderView: View {
                         Text("인원")
                             .foregroundColor(.white)
                             .font(.system(size: 20, weight: .bold))
-                        
-                        Text("\(totalMemberNum)/\(maxMemberNum)")
+                        Text("\(crewInfo?.memberCount ?? 0)/\(crewInfo?.limitMember ?? 0)")
                             .foregroundColor(Color.init(red: 241/255, green:  185/255, blue:  67/255))
                             .font(.system(size: 16, weight: .bold))
                     }
@@ -119,7 +113,7 @@ struct CrewInfoHeaderView: View {
                     .font(.system(size: 20, weight: .bold))
                 
                 VStack{
-                    Text("\(noticeText)")
+                    Text("\(crewInfo?.notice ?? "없음")")
                         .foregroundColor(.white)
                         .font(.system(size: 18, weight: .bold))
                     
@@ -144,6 +138,14 @@ struct CrewInfoHeaderView: View {
 
 struct CrewInfoHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        CrewInfoHeaderView()
+        CrewInfoHeaderView(crewInfo: .constant( CrewModel(id: "",
+                                                          crewName: "",
+                                                          leaderId: "",
+                                                          type: "",
+                                                          users: [],
+                                                          limitMember: 0,
+                                                          memberCount: 0,
+                                                          minimumGrade: "",
+                                                          missionCondition: "")) )
     }
 }

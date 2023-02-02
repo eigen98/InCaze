@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
+import FirebaseDatabase
 enum CrewRepoError: Error{
     case notFoundCrewData
     case failGetCrewData
@@ -46,18 +46,24 @@ protocol CrewRepository{
     
     //MARK: 크루 가입 (요청 승인 시 deleteRequestJoinMessage 호출 필요)
     func postNewUserCrewMember(crewId: String, user: User) -> AnyPublisher<User, CrewRepoError>
-    //MARK: 크루 탈퇴
-    //func deleteUserCrewMember(crewId: String, userId : String)
-    //MARK: 크루 멤버 강퇴
+    //MARK: 유저 가입 크루 정보 추가.
+    func addCrewOfUser(userId : String, crewId: String) -> AnyPublisher<String, CrewRepoError>
+    //MARK: 크루 멤버 삭제
+    func deleteUserCrewMember(crewId: String, user : User) -> AnyPublisher<String, CrewRepoError>
+    
 }
 
 class CrewRepositoryImpl : CrewRepository{
     
+    
+    
+    
     var db : Firestore
+    private var databaseRef: DatabaseReference!
     init(){
         db = Firestore.firestore()
+        databaseRef = Database.database().reference()
     }
-    
     
     
     /*
@@ -141,7 +147,7 @@ class CrewRepositoryImpl : CrewRepository{
     //CrewId 필요
     func getCrewData(crewId: String) -> AnyPublisher<CrewModel?, CrewRepoError> {
         return Future<CrewModel?, CrewRepoError>{observer in
-            self.db.collection("Crew").document("")
+            self.db.collection("Crew").document(crewId)
                 .getDocument{ snapshot, error in
                     if let error = error{
                         print(error)
@@ -155,14 +161,17 @@ class CrewRepositoryImpl : CrewRepository{
                     }
                     var crew : CrewModel? = nil
                     do{
+                        print("snapshot : \(snapshot.data())")
                         var crew = try snapshot.data(as: CrewModel.self)
-                        
+                        print("crew : \(crew)")
+                        observer(.success(crew))
                     }catch{
+                        print("getCrewData Fail :")
                         print(error)
                         observer(.failure(CrewRepoError.failGetCrewData))
                     }
                     
-                    observer(.success(crew))
+                    
                 }
         }.eraseToAnyPublisher()
         
@@ -294,9 +303,54 @@ class CrewRepositoryImpl : CrewRepository{
         }.eraseToAnyPublisher()
     }
     
-    
+    //MARK: 크루 멤버 삭제
+    func deleteUserCrewMember(crewId: String, user : User) -> AnyPublisher<String, CrewRepoError>{
+        return Future<String, CrewRepoError>{observer in
+            
+            self.db.collection("Crew").document(crewId)
+                .updateData(["users" : FieldValue.arrayRemove([user])]){error in
+                if let error = error{
+                    print(error)
+                    observer(.failure(CrewRepoError.failDeleteCrew))
+                }
+                observer(.success("가입 요청 메시지 처리상태 변경"))
+                
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    //MARK: 유저의 크루 정보 삭제
+    func deleteCrewOfUser(crewId: String, user : User) -> AnyPublisher<String, CrewRepoError> {
+        return Future<String, CrewRepoError>{observer in
+            
+            self.databaseRef.child("User").child(user.id).child("crew").removeValue(){error, snapshot  in
+                if let error = error{
+                    print(error)
+                    observer(.failure(CrewRepoError.failDeleteCrew))
+                }
+                observer(.success("크루 삭제"))
+                
+            }
+        }
+        .eraseToAnyPublisher()
+    }
     
 
+    //MARK: 유저 가입 크루 정보 추가.
+    func addCrewOfUser(userId: String, crewId: String) -> AnyPublisher<String, CrewRepoError> {
+        return Future<String, CrewRepoError>{observer in
+            
+            self.databaseRef.child("User").child(userId).child("crew").setValue(crewId){error, snapshot  in
+                if let error = error{
+                    print(error)
+                    observer(.failure(CrewRepoError.failDeleteCrew))
+                }
+                observer(.success("크루 삭제"))
+                
+            }
+        }
+        .eraseToAnyPublisher()
+    }
     
    
 
