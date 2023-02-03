@@ -19,7 +19,7 @@ struct TabbarView: View {
                     Text("홈화면")
                 }
             
-            MyPageView()
+            MyPageView(viewModel: MyPageViewModel(service: ProfileServiceImpl(profileRepo: ProfileRepositoryImpl())))
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("My")

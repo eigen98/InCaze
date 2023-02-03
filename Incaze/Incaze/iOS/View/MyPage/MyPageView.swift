@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MyPageView: View {
     let characters:[String] = ["BasicRunner", "SpaceMan", "JeepCar"]
-    
+    @ObservedObject var viewModel : MyPageViewModel
+    @State var myname : String = ""
     @State var isAnimating : Bool = true
     var deviceWidth = UserManager.shared.deviceWidth
     @State var offset : CGFloat = .init(0)
@@ -21,7 +22,7 @@ struct MyPageView: View {
                 
                 //캐릭터 선택]
                 VStack{
-                    Text("My Avatar")
+                    Text("\(myname)")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.white)
                     
@@ -120,6 +121,13 @@ struct MyPageView: View {
             }
         }
         .background(Color.init(red: 30/255, green: 26/255, blue: 62/255))
+        .onAppear{
+            viewModel.getMyProfile()
+        }
+        .onReceive(viewModel.userSubject){user in
+            self.myname = user.nickname
+            
+        }
         
     }
     
@@ -140,7 +148,7 @@ struct MyPageView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView()
+        MyPageView(viewModel: MyPageViewModel(service: ProfileServiceImpl(profileRepo: ProfileRepositoryImpl())))
     }
 }
 //부채꼴 모양
