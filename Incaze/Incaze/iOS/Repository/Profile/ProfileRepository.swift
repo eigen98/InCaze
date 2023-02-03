@@ -40,19 +40,12 @@ class ProfileRepositoryImpl : ProfileRepository{
         return Future<User?, ProfileRepoError>{observer in
            
             self.databaseRef.child("User").child(myId).observeSingleEvent(of: .value, with: {snapshot in
-//                guard let dict = snapshot.value as? [String:[String:Any]] else {
-//                    print("실패")
-//                    observer(.failure(ProfileRepoError.notFoundProfile))
-//                    return
-//                }
-                print(snapshot)
+                
                 guard let dict = snapshot.value as? [String:Any] else {
                     print("실패")
                     observer(.failure(ProfileRepoError.notFoundProfile))
                     return
                 }
-                print("dict : \(dict)")
-                
                 
                 do {
                     

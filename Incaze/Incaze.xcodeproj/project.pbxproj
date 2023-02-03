@@ -116,6 +116,11 @@
 		EEF14A8B2984ED7200368DE1 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */; };
 		EEF14A8D2984EF3A00368DE1 /* CrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8C2984EF3A00368DE1 /* CrewService.swift */; };
 		EEF14A8F2984F93E00368DE1 /* NewCrewModalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8E2984F93E00368DE1 /* NewCrewModalModifier.swift */; };
+		EEF1FEA8298D2801001EC5E8 /* RunProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FEA7298D2801001EC5E8 /* RunProgressBarView.swift */; };
+		EEF1FEAB298D30F5001EC5E8 /* ChallengeStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FEAA298D30F5001EC5E8 /* ChallengeStartView.swift */; };
+		EEF1FEAD298D34D0001EC5E8 /* ChallengingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FEAC298D34D0001EC5E8 /* ChallengingView.swift */; };
+		EEF1FEAF298D3BAF001EC5E8 /* TimeOutModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FEAE298D3BAF001EC5E8 /* TimeOutModalView.swift */; };
+		EEF1FEB1298D3C02001EC5E8 /* ClearModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1FEB0298D3C02001EC5E8 /* ClearModalView.swift */; };
 		EEF449142966CEEE0014687E /* QuizProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449122966CEEE0014687E /* QuizProgressView.swift */; };
 		EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */; };
 		EEF449182966CEF80014687E /* StartQuizModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF449162966CEF70014687E /* StartQuizModalView.swift */; };
@@ -229,6 +234,11 @@
 		EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
 		EEF14A8C2984EF3A00368DE1 /* CrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewService.swift; sourceTree = "<group>"; };
 		EEF14A8E2984F93E00368DE1 /* NewCrewModalModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCrewModalModifier.swift; sourceTree = "<group>"; };
+		EEF1FEA7298D2801001EC5E8 /* RunProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunProgressBarView.swift; sourceTree = "<group>"; };
+		EEF1FEAA298D30F5001EC5E8 /* ChallengeStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStartView.swift; sourceTree = "<group>"; };
+		EEF1FEAC298D34D0001EC5E8 /* ChallengingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengingView.swift; sourceTree = "<group>"; };
+		EEF1FEAE298D3BAF001EC5E8 /* TimeOutModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutModalView.swift; sourceTree = "<group>"; };
+		EEF1FEB0298D3C02001EC5E8 /* ClearModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearModalView.swift; sourceTree = "<group>"; };
 		EEF449122966CEEE0014687E /* QuizProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizProgressView.swift; sourceTree = "<group>"; };
 		EEF449132966CEEE0014687E /* QuizAnswerButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizAnswerButtonView.swift; sourceTree = "<group>"; };
 		EEF449162966CEF70014687E /* StartQuizModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartQuizModalView.swift; sourceTree = "<group>"; };
@@ -438,6 +448,7 @@
 		EE3D10A229401B8E0010181B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EEF1FEA9298D30DD001EC5E8 /* Challenge */,
 				EE7CFA89298BFF4B00AB7530 /* OtherProfile */,
 				EED2EBBC297E6ECE0093801F /* MyPage */,
 				EE302724296C4889009A7F6B /* Running */,
@@ -566,6 +577,7 @@
 				EE48C3662982CBEE004D594A /* ReactiveButtonStyle.swift */,
 				EE48C3682982CC87004D594A /* CustomAlertModifier.swift */,
 				EE48C36A2982CCB0004D594A /* CustomAlert.swift */,
+				EEF1FEA7298D2801001EC5E8 /* RunProgressBarView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -742,6 +754,17 @@
 			path = Crew;
 			sourceTree = "<group>";
 		};
+		EEF1FEA9298D30DD001EC5E8 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1FEAA298D30F5001EC5E8 /* ChallengeStartView.swift */,
+				EEF1FEAC298D34D0001EC5E8 /* ChallengingView.swift */,
+				EEF1FEAE298D3BAF001EC5E8 /* TimeOutModalView.swift */,
+				EEF1FEB0298D3C02001EC5E8 /* ClearModalView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
 		EEF449112966CEC90014687E /* Temp */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +925,7 @@
 			files = (
 				EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */,
 				EEFD94132959F7420064AD31 /* FlipView.swift in Sources */,
+				EEF1FEAD298D34D0001EC5E8 /* ChallengingView.swift in Sources */,
 				EEF14A8F2984F93E00368DE1 /* NewCrewModalModifier.swift in Sources */,
 				EE57A49A297CCC6100051DBB /* MatchingRepository.swift in Sources */,
 				EE48C3692982CC87004D594A /* CustomAlertModifier.swift in Sources */,
@@ -909,6 +933,7 @@
 				EE5339A32978C8FB00CDB5A5 /* Settings.swift in Sources */,
 				EEF14A892984E7F600368DE1 /* CrewRepository.swift in Sources */,
 				EE144001295B3FC7005E6898 /* MapView.swift in Sources */,
+				EEF1FEA8298D2801001EC5E8 /* RunProgressBarView.swift in Sources */,
 				EEDBFB67295D73F70056B14B /* MeleeRunView.swift in Sources */,
 				EE48C3752982DECB004D594A /* CrewInfoHeaderView.swift in Sources */,
 				EE48C36D2982CDC3004D594A /* NewCrewAlertView.swift in Sources */,
@@ -917,6 +942,7 @@
 				EED2EBBE297E6EE30093801F /* MyPageView.swift in Sources */,
 				EE7CFA8B298BFF5D00AB7530 /* OtherProfileView.swift in Sources */,
 				EE28058729799861007F0ADF /* ClockView.swift in Sources */,
+				EEF1FEB1298D3C02001EC5E8 /* ClearModalView.swift in Sources */,
 				EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */,
 				EE5339992978BAE800CDB5A5 /* Power.swift in Sources */,
 				EED2EBAC297E4FD90093801F /* LottieView.swift in Sources */,
@@ -930,6 +956,7 @@
 				EED2EBAF297E59800093801F /* NavigationUtil.swift in Sources */,
 				EEF4491D2966D37E0014687E /* ClientQuizView.swift in Sources */,
 				EEDC2F7C297EF0E600719E9A /* RecentButtonCellView.swift in Sources */,
+				EEF1FEAF298D3BAF001EC5E8 /* TimeOutModalView.swift in Sources */,
 				EE0930F0296B560E00455CEC /* DogGifImageView.swift in Sources */,
 				EED6A375298CB85700158261 /* MyPageViewModel.swift in Sources */,
 				EE5339932978B22700CDB5A5 /* DependencyManager.swift in Sources */,
@@ -950,6 +977,7 @@
 				EEDACCB32980E49A00216302 /* HealthDataRepository.swift in Sources */,
 				EE6C517F2949585F00028754 /* CustomRingView.swift in Sources */,
 				EED2EBB2297E64C70093801F /* RunEndModalView.swift in Sources */,
+				EEF1FEAB298D30F5001EC5E8 /* ChallengeStartView.swift in Sources */,
 				EE302726296C48B3009A7F6B /* RunningViewModel.swift in Sources */,
 				EE48C36B2982CCB0004D594A /* CustomAlert.swift in Sources */,
 				EECA0EDC296C0894004124BE /* LocationService.swift in Sources */,
