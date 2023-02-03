@@ -45,6 +45,8 @@
 		EE3D10B2294030730010181B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE3D10B1294030730010181B /* GoogleService-Info.plist */; };
 		EE43B8D62941A7FB006F5113 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D52941A7FB006F5113 /* Key.swift */; };
 		EE43B8D82941A834006F5113 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE43B8D72941A834006F5113 /* UserManager.swift */; };
+		EE445E97298D675D0001B803 /* ChallengeStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE445E96298D675D0001B803 /* ChallengeStageView.swift */; };
+		EE445E9A298D6B100001B803 /* UnableFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE445E99298D6B100001B803 /* UnableFrameModifier.swift */; };
 		EE48C3672982CBEE004D594A /* ReactiveButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3662982CBEE004D594A /* ReactiveButtonStyle.swift */; };
 		EE48C3692982CC87004D594A /* CustomAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C3682982CC87004D594A /* CustomAlertModifier.swift */; };
 		EE48C36B2982CCB0004D594A /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48C36A2982CCB0004D594A /* CustomAlert.swift */; };
@@ -167,6 +169,8 @@
 		EE3D10B1294030730010181B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE43B8D52941A7FB006F5113 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		EE43B8D72941A834006F5113 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		EE445E96298D675D0001B803 /* ChallengeStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeStageView.swift; sourceTree = "<group>"; };
+		EE445E99298D6B100001B803 /* UnableFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnableFrameModifier.swift; sourceTree = "<group>"; };
 		EE48C3662982CBEE004D594A /* ReactiveButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveButtonStyle.swift; sourceTree = "<group>"; };
 		EE48C3682982CC87004D594A /* CustomAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertModifier.swift; sourceTree = "<group>"; };
 		EE48C36A2982CCB0004D594A /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
@@ -507,6 +511,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		EE445E98298D6AE80001B803 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				EE445E99298D6B100001B803 /* UnableFrameModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		EE48C3702982DA01004D594A /* NewCrew */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,10 +769,12 @@
 		EEF1FEA9298D30DD001EC5E8 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				EE445E98298D6AE80001B803 /* Modifier */,
 				EEF1FEAA298D30F5001EC5E8 /* ChallengeStartView.swift */,
 				EEF1FEAC298D34D0001EC5E8 /* ChallengingView.swift */,
 				EEF1FEAE298D3BAF001EC5E8 /* TimeOutModalView.swift */,
 				EEF1FEB0298D3C02001EC5E8 /* ClearModalView.swift */,
+				EE445E96298D675D0001B803 /* ChallengeStageView.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -1003,6 +1017,7 @@
 				EE6C517A2949558700028754 /* RingShape.swift in Sources */,
 				EE5339972978BAD700CDB5A5 /* Parameters.swift in Sources */,
 				EEF449142966CEEE0014687E /* QuizProgressView.swift in Sources */,
+				EE445E9A298D6B100001B803 /* UnableFrameModifier.swift in Sources */,
 				EE3D10AE294025E80010181B /* HomeView.swift in Sources */,
 				EEF14A8B2984ED7200368DE1 /* Encodable+asDictionary.swift in Sources */,
 				EEDBFB69295D7E400056B14B /* RunTrackingView.swift in Sources */,
@@ -1020,6 +1035,7 @@
 				EEFDE017294F209B00A8D142 /* PracticeView.swift in Sources */,
 				EE6023882940684400472CD2 /* User.swift in Sources */,
 				EE53399D2978BB3800CDB5A5 /* Weight.swift in Sources */,
+				EE445E97298D675D0001B803 /* ChallengeStageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

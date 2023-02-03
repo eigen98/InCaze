@@ -58,7 +58,7 @@ struct HomeView: View {
               
               VStack{
                   NavigationLink(destination: SearchView(viewModel: SearchViewModel(isSelectable: true)), label: {
-                      Text("Challenge")
+                      Text("SearchMate")
                           .font(.system(size: 20,weight: .bold))
                           .foregroundColor(.white)
                           .frame(width: 120, height: 120)
@@ -69,14 +69,13 @@ struct HomeView: View {
                   .cornerRadius(20, corners: .allCorners)
               
               VStack{
-               Button(action: {
-                   
-               }, label: {
-                   Text("Find mate")
-                       .font(.system(size: 20,weight: .bold))
-                       .foregroundColor(.white)
-               })
-               .frame(width: 120, height: 120)
+                  NavigationLink(destination: ChallengeStageView(), label: {
+                      Text("Challenge")
+                          .font(.system(size: 20,weight: .bold))
+                          .foregroundColor(.white)
+                          .frame(width: 120, height: 120)
+                  })
+                  .frame(width: 120, height: 120)
                
               }.background(.black)
                   .cornerRadius(20, corners: .allCorners)

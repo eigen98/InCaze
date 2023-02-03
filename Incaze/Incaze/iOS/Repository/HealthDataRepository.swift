@@ -31,26 +31,101 @@ class HealthDataRepository{
     var share = Set([HKObjectType.quantityType(forIdentifier: .appleStandTime)!,
                      HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
                      HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!])
-
+    
+    
+    let birthDateType = HKCharacteristicType.characteristicType(forIdentifier: .dateOfBirth)!
+    let heightType = HKQuantityType.quantityType(forIdentifier: .height)!
+    let weightType = HKQuantityType.quantityType(forIdentifier: .bodyMass)!
     
     /*
      권한 요청
      */
-    func requestAuthorization(){
-        self.healthStore.requestAuthorization (toShare: nil , read: read) { (success, error) in
-            if error != nil {
-                print (error.debugDescription)
-            }else{
-                if success {
-                    print ("권한이 허락되었습니다. ")
-                }else{
-                   
-                    print("권한이 아직 없어요. ")
-                }
+//    func requestAuthorization(){
+//        self.healthStore.requestAuthorization (toShare: nil , read: read) { (success, error) in
+//            if error != nil {
+//                print (error.debugDescription)
+//            }else{
+//                if success {
+//                    print ("권한이 허락되었습니다. ")
+//                }else{
+//
+//                    print("권한이 아직 없어요. ")
+//                }
+//            }
+//        }
+//
+//    }
+    
+    func requestAuthorization() {
+        let healthKitTypesToRead = Set([
+            birthDateType,
+            heightType,
+            weightType
+        ])
+
+        healthStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) { (success, error) in
+            if !success {
+                print("Error requesting authorization: \(error?.localizedDescription ?? "Unknown error")")
+               
+            }
+        }
+    }
+    
+    
+    func readMostRecentAgeSample() {
+        let now = Date()
+        let birthday = try? healthStore.dateOfBirthComponents()
+
+        guard let birthYear = birthday?.year, let birthMonth = birthday?.month, let birthDay = birthday?.day else {
+            print("Error reading birthday from HealthKit")
+            return
+        }
+
+        let birthDate = Calendar.current.date(from: DateComponents(year: birthYear, month: birthMonth, day: birthDay))
+        let ageComponents = Calendar.current.dateComponents([.year], from: birthDate!, to: now)
+
+        guard let age = ageComponents.year else {
+            print("Error calculating age")
+            return
+        }
+
+        print("Most recent age: \(age)")
+        UserManager.shared.age = age
+    }
+
+    func readMostRecentHeightSample() {
+        let heightSampleQuery = HKSampleQuery(sampleType: heightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, samples, error) in
+            if let heightSample = samples?.first as? HKQuantitySample {
+                let height = heightSample.quantity.doubleValue(for: HKUnit.meter())
+                print("Most recent height: \(height) m")
+                UserManager.shared.height = height
+            } else {
+                print("Error reading height from HealthKit")
             }
         }
         
+
+        healthStore.execute(heightSampleQuery)
     }
+
+    func readMostRecentWeightSample() {
+        let weightSampleQuery = HKSampleQuery(sampleType: weightType, predicate: nil, limit: 1, sortDescriptors: nil) { (query, samples, error) in
+            if let weightSample = samples?.first as? HKQuantitySample {
+                let weight = weightSample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+                print("Most recent weight: \(weight) kg")
+                UserManager.shared.height = weight
+            } else {
+                print("Error reading weight from HealthKit")
+            }
+        }
+
+        healthStore.execute(weightSampleQuery)
+    }
+    
+    
+    
+    
+    
     /*
      칼로리 소모 데이터 get
      */
@@ -76,14 +151,15 @@ class HealthDataRepository{
     }
     
     /*
-    건강 관련 mock 데이터 생성.
-     시뮬레이터에서 유효한 데이터를 볼 수 없기때문
+     Harris-Benedict equation in Swift
+     calculate the number of calories burned during a running session
      */
-    func getTestData() -> [Double]{
-        let first = Double(Int.random(in: 20...99))
-        let second = Double(Int.random(in: 20...99))
-        let third = Double(Int.random(in: 20...99))
-        
-        return [first, second, third]
+    func caloriesBurned(weight: Double, height: Double, age: Int, met : Double, duration: Double) -> Int {
+        let bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * Double(age))
+        // met = MET value for running
+        let caloriesBurned = bmr * met * (duration / 60.0)
+        return Int(caloriesBurned)
     }
+
+   
 }

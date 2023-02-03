@@ -29,6 +29,9 @@ struct TabbarView: View {
         }
         .onAppear{
             HealthDataRepository.shared.requestAuthorization()
+            HealthDataRepository.shared.readMostRecentAgeSample()
+            HealthDataRepository.shared.readMostRecentWeightSample()
+            HealthDataRepository.shared.readMostRecentHeightSample()
         }
     }
 }

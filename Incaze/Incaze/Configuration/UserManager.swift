@@ -101,6 +101,43 @@ class UserManager {
         }
         
     }
+    //Health 관련
+    var weight: Double {
+        
+        get {
+            return UserDefaults.standard.double(forKey: "weight") ?? 0.0//KeychainSwift().get("fullLocation") ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "weight") //KeychainSwift().set(newValue, forKey: "fullLocation")
+        }
+        
+    }
+    
+    //Health 관련
+    var height: Double {
+        
+        get {
+            return UserDefaults.standard.double(forKey: "height") ?? 0.0//KeychainSwift().get("fullLocation") ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "height") //KeychainSwift().set(newValue, forKey: "fullLocation")
+        }
+        
+    }
+    
+    //Health 관련
+    var age: Int {
+        
+        get {
+            return UserDefaults.standard.integer(forKey: "age") ?? 0//KeychainSwift().get("fullLocation") ?? ""
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "age") //KeychainSwift().set(newValue, forKey: "fullLocation")
+        }
+        
+    }
+    
+    
     
     /*
      email database id 형식으로 변환
