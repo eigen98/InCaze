@@ -10,19 +10,19 @@ import Combine
 
 protocol ProfileService{
     //MARK: 프로필 정보 불러오기
-    func getUserProfileInfo(userId : String) -> AnyPublisher<User?, ProfileRepoError>
+    func getUserProfileInfo(userId : String) -> AnyPublisher<User?, UserInfoRepoError>
 }
 
 
 
 class ProfileServiceImpl : ProfileService{
-    let profileRepo : ProfileRepository
+    let profileRepo : UserInfoRepository
     
-    init(profileRepo : ProfileRepository) {
+    init(profileRepo : UserInfoRepository) {
         self.profileRepo = profileRepo
     }
     
-    func getUserProfileInfo(userId: String) -> AnyPublisher<User?, ProfileRepoError> {
+    func getUserProfileInfo(userId: String) -> AnyPublisher<User?, UserInfoRepoError> {
         return profileRepo.getUserProfileInfo(userId: userId)
     }
     

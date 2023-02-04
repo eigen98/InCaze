@@ -18,7 +18,6 @@ struct HomeView: View {
     @State private var distance = 0.0
     @State private var pace = 0.0
     @State private var coordinates = [CLLocationCoordinate2D]()
-    @State private var isPermissionPresented = false
     private var locationPermissions: LocationPermissions = LocationPermissions()
     
     var notificationView: some View {
@@ -110,28 +109,9 @@ struct HomeView: View {
                   .cornerRadius(20, corners: .allCorners)
           }
           
-          
-          
-          if self.isPermissionPresented {
-              self.notificationView
-                  .transition(.slideInOut)
-          }
+
           
           Spacer()
-          
-          VStack{
-              if !userState {
-                  FlipView()
-              }else{
-                  VStack {
-                  }
-              }
-            
-          }
-        
-        Spacer()
-        
-        // 4
         
       }
       .frame(width: 400)
@@ -144,15 +124,6 @@ struct HomeView: View {
     .onAppear{
         setNavigationTitleColor()
     }
-    .onReceive(locationPermissions.status) { status in
-        switch status {
-        case .denied, .restricted:
-            withAnimation { self.isPermissionPresented = true }
-        default:
-            withAnimation { self.isPermissionPresented = false }
-        }
-    }
-    
     .navigationViewStyle(StackNavigationViewStyle())
       
   }

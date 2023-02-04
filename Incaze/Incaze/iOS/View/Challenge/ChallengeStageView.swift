@@ -20,10 +20,11 @@ struct ChallengeStageView: View {
                             HStack {
                                 VStack{
                                     NavigationLink(destination: {
-                                        ChallengeStartView()
+                                        ChallengeStartView(targetDistance: 500.0, targetTime: 100, viewModel: ChallengeStartViewModel())
+                                        //ChallengeStartView(viewModel: ChallengeStartViewModel())
                                     }, label: {
                                         Text("\(index) - 0")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color.white)
                                             .font(.system(size: 22, weight: .bold))
                                     })
                                         
@@ -31,30 +32,30 @@ struct ChallengeStageView: View {
                                 
                                 VStack{
                                     NavigationLink(destination: {
-                                        ChallengeStartView()
+                                       // ChallengeStartView(viewModel: ChallengeStartViewModel())
                                     }, label: {
                                         Text("\(index) - 1")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color.white)
                                             .font(.system(size: 22, weight: .bold))
                                     })
                                 }.modifier(PossibleFrameModifier())
                                 
                                 VStack{
                                     NavigationLink(destination: {
-                                        ChallengeStartView()
+                                       // ChallengeStartView(viewModel: ChallengeStartViewModel())
                                     }, label: {
                                         Text("\(index) - 2")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color.white)
                                             .font(.system(size: 22, weight: .bold))
                                     })
                                 }.modifier(UnableFrameModifier())
                                 
                                 VStack{
                                     NavigationLink(destination: {
-                                        ChallengeStartView()
+                                       // ChallengeStartView(viewModel: ChallengeStartViewModel())
                                     }, label: {
                                         Text("\(index) - 3")
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color.white)
                                             .font(.system(size: 22, weight: .bold))
                                     })
                                 }.modifier(UnableFrameModifier())

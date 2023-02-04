@@ -51,6 +51,8 @@ protocol CrewRepository{
     //MARK: 크루 멤버 삭제
     func deleteUserCrewMember(crewId: String, user : User) -> AnyPublisher<String, CrewRepoError>
     
+    //MARK: 챌린지 결과 Crew 업데이트
+    func updateCrewChallengeResult(result : RunningSession) -> AnyPublisher<RunningSession?, CrewRepoError>
 }
 
 class CrewRepositoryImpl : CrewRepository{
@@ -350,6 +352,37 @@ class CrewRepositoryImpl : CrewRepository{
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    //MARK: 챌린지 결과 Crew 업데이트
+    func updateCrewChallengeResult(result : RunningSession) -> AnyPublisher<RunningSession?, CrewRepoError>{
+        let dictionary = result.asDictionary ?? ["record" : "fail"]
+        var myId = UserManager.shared.id
+        var myCrewId = UserManager.shared.crewId
+        var date = DateUtil.extractDate(from: result.date)
+        var time = DateUtil.extractTime(from: result.date)
+        //크루가 없는 경우
+        if myCrewId == ""{
+            //Just :  실패하지 않고 단일 값만 내보내는 Publisher를 만듬
+            //Result : 특정 유형의 성공 값 또는 특정 유형의 실패 값을 캡슐화
+            let resultPublisher: Result<RunningSession?, CrewRepoError> = .success(result)
+           //Result 는 publisher로 변환 가능. by using the Result.Publisher
+            return resultPublisher.publisher.eraseToAnyPublisher()
+        }
+        
+        return Future<RunningSession?, CrewRepoError>{ observer in
+            self.db.collection("CrewRecord").document("\(myCrewId)")
+                .collection("Users").document("\(myId)")
+                .collection("\(date)").document("\(time)")
+                .setData(dictionary){error in
+                    if let error = error{
+                        return observer(.failure(CrewRepoError.failCreateNewCrew))
+                        
+                    }
+                    return observer(.success(result))
+                    
+                }
+        }.eraseToAnyPublisher()
     }
     
    

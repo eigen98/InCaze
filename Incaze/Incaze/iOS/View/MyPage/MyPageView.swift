@@ -148,7 +148,7 @@ struct MyPageView: View {
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPageView(viewModel: MyPageViewModel(service: ProfileServiceImpl(profileRepo: ProfileRepositoryImpl())))
+        MyPageView(viewModel: MyPageViewModel(service: ProfileServiceImpl(profileRepo: UserInfoRepositoryImpl())))
     }
 }
 //부채꼴 모양

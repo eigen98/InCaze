@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
-
+//챌린지 진행 뷰
 struct ChallengeStartView: View {
     var width = UserManager.shared.deviceWidth
+    var targetDistance : Double
+    var targetTime : Int
     @State private var distance: Double = 0.0
     @State private var pace: Double = 0.0
     @State private var time: Double = 0.0
     @State private var limitTime : Int = 300
     
+    @ObservedObject var viewModel : ChallengeStartViewModel
+    
     private let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    //For pop to RootView
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    
     var body: some View {
         VStack(spacing: 20) {
             Color(.black)
@@ -28,8 +34,20 @@ struct ChallengeStartView: View {
                         .foregroundColor(Color(red: 31/255, green: 187/255, blue: 216/255))
                 }
                
-                       
-                   
+                
+                //콘솔 용도
+                VStack{
+                    Text("distacne \(viewModel.distance)")
+                        .foregroundColor(Color(red: 31/255, green: 187/255, blue: 216/255))
+                    Text("pace \(viewModel.pace)")
+                        .foregroundColor(Color.red)
+                    Text("caloriesBurned \(viewModel.caloriesBurned)")
+                        .foregroundColor(Color.green)
+                    Text("duration \(viewModel.duration)")
+                        .foregroundColor(Color.yellow)
+                }.font(.system(size: 26,weight: .bold))
+                    
+                
                    RunProgressBarView()
                }
                
@@ -79,12 +97,23 @@ struct ChallengeStartView: View {
                
            }
            .padding()
+           .onAppear{
+               //측정 시작
+               viewModel.startRace()
+           }//완주 성공
+           .onReceive(viewModel.distanceSubject){distance in
+               if distance >= 0.3{
+                   showEndRunModal()
+               }
+               
+           }
            .onReceive(timer) {_ in
                self.time += 1.0
                if self.limitTime > 0{
                    self.limitTime -= 1
                    
                }else{
+                   //완주 실패
                    showTimeOutRunModal()
                }
                
@@ -104,7 +133,7 @@ struct ChallengeStartView: View {
     func showEndRunModal(){
         
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-            TimeOutModalView()
+            ClearModalView()
         }
     }
     
@@ -112,6 +141,8 @@ struct ChallengeStartView: View {
 
 struct ChallengeStartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeStartView()
+        ChallengeStartView(targetDistance: 100.0,
+                           targetTime: 0,
+                           viewModel: ChallengeStartViewModel())
     }
 }

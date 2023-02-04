@@ -45,15 +45,17 @@ class RunningViewModel : ObservableObject{
         self.channelId = runningChannelId
         
         self.repository = RunningRepositoryImpl()
-        // debounce : 이벤트 간에 지정된 시간이 경과된 후에만 요소를 게시합니다.
-        locationService.ready()
-        locationService.start()
         
-        runService.start()
-        
+
+       
+    }
+    /*
+     속도 측정 시작
+     */
+    func observeSpeed(){
         //Speed
         locationService.speed
-            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)// debounce : 이벤트 간에 지정된 시간이 경과된 후에만 요소를 게시합니다.
             .merge(with: locationService.speed) //Rx CombineLatest와 비슷?
             .removeDuplicates()
             .sink{ value in //Rx Subscribe와 비슷
@@ -65,16 +67,11 @@ class RunningViewModel : ObservableObject{
             }
             .store(in: &cancellable)
         
-        
-        
-        //location = locationService.location
-//            .assign(to: <#T##ReferenceWritableKeyPath<Root, CLLocation>#>, on: <#T##Root#>)
-//            .sink {
-//                print("location : \($0)")
-//
-//
-//            }
-        
+    }
+    /*
+     거리 측정 시작
+     */
+    func observerDistance(){
         //Distance
        
         runService.distance
@@ -101,6 +98,7 @@ class RunningViewModel : ObservableObject{
                 self.distance = "\(result.removeLast(2))"
             }
             .store(in: &cancelables)
+        
         // listens for updates to the running distance.
         distanceSubject
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
@@ -117,6 +115,15 @@ class RunningViewModel : ObservableObject{
     
     //상대 유저 선택 & 게임 채널 생성 (선택 가능 유저)
     func addRunningChannel(myId : String, oppId : String){
+        
+        locationService.ready()
+        locationService.start()
+        
+        runService.start()
+        
+        observeSpeed()
+        observerDistance()
+        
         var channelId =  myId > oppId ? myId + "_" + oppId :  oppId + "_" + myId
         print("addRunningChannel : \(myId) ,\(oppId)")
         let myRef = Database.database().reference().child("Running").child(channelId).child(myId)

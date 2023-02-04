@@ -12,9 +12,9 @@ struct ClearModalView: View {
     var body: some View {
         ZStack{
             VStack {
-                Text("실패").font(.system(size: 28, weight: .bold)).foregroundColor(.red)
+                Text("성공").font(.system(size: 28, weight: .bold)).foregroundColor(.red)
                 
-                Text("시간이 초과되었습니다ㅠㅠ").font(.system(size: 22, weight: .bold)).foregroundColor(.black)
+                Text("챌린지 목표를 달성하셨습니다!").font(.system(size: 22, weight: .bold)).foregroundColor(.black)
                 
                 HStack{
                  
