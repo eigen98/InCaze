@@ -18,4 +18,11 @@ struct DateUtil{
         dateFormatter.dateFormat = "HH:mm:ss"
         return dateFormatter.string(from: date)
     }
+    
+    static func getCurrentDay() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        return Int(formatter.string(from: date)) ?? 0
+    }
 }

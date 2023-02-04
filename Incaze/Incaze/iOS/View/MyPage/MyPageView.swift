@@ -20,7 +20,7 @@ struct MyPageView: View {
             
             VStack{
                 
-                //캐릭터 선택]
+                //캐릭터 선택
                 VStack{
                     Text("\(myname)")
                         .font(.system(size: 20, weight: .bold))

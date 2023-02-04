@@ -17,29 +17,38 @@ struct CrewListView: View {
             ZStack {
                 ScrollView{
                     
-                    
                     LazyVStack.init(spacing: 0, pinnedViews: [.sectionHeaders]){
                         Section{
                             HStack{
                                 ZStack{
                                     
+                                    RoundedRectangle(cornerRadius: 16)
+                                                   .fill(Color.init(red: 174/255, green: 147/255, blue: 186/255))
+                                                   .frame( height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 16)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    
+                                    
                                     TextField("", text: $viewModel.searchText,
-                                              prompt: Text("크루 이름")
-                                        .foregroundColor(Color.init(red: 190/255, green: 195/255, blue: 217/255))
-                                        .font(.system(size: 20, weight: .bold))
+                                              prompt: Text("크루 이름 입력")
+                                        .foregroundColor(Color.black)
+                                        .font(.system(size: 20, weight: .medium))
                                         
                                     )
                                       .padding()
-                                      .background(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.black)
-                                            
-                                            
-                                      )
+//                                      .background(
+//                                        RoundedRectangle(cornerRadius: 10)
+//                                            .stroke(Color.black)
+//
+//
+//                                      )
                                 }
-                                .background(Color.init(red: 40/255, green: 57/255, blue: 87/255))
+                                //.background(Color.init(red: 40/255, green: 57/255, blue: 87/255))
                                 
-                                  .padding(.leading, 20)
+                                .padding(.leading, 20)
                                 
                                 Button {
                                   
@@ -50,7 +59,7 @@ struct CrewListView: View {
                                     
                                 }
                                 .buttonStyle(.borderedProminent)
-                                .tint(Color.init(red: 86/255, green: 120/255, blue: 145/255))
+                                .tint(Color.init(red: 210/255, green: 120/255, blue: 145/255))
                                 .frame(width: 80, height: 50)
                                 
                             }

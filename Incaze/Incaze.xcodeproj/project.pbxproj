@@ -65,9 +65,7 @@
 		EE5339A32978C8FB00CDB5A5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339A22978C8FB00CDB5A5 /* Settings.swift */; };
 		EE5339A52978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5339A42978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift */; };
 		EE57A49A297CCC6100051DBB /* MatchingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57A499297CCC6100051DBB /* MatchingRepository.swift */; };
-		EE60238529405FC300472CD2 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238429405FC300472CD2 /* BoardListView.swift */; };
 		EE6023882940684400472CD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6023872940684400472CD2 /* User.swift */; };
-		EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE602389294080B100472CD2 /* BoardListViewModel.swift */; };
 		EE60238C2940870B00472CD2 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60238B2940870B00472CD2 /* Room.swift */; };
 		EE60FB1A2974C84D004F82E2 /* AnyTransition+SlideInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60FB192974C84D004F82E2 /* AnyTransition+SlideInOut.swift */; };
 		EE6C517A2949558700028754 /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C51792949558700028754 /* RingShape.swift */; };
@@ -116,6 +114,7 @@
 		EEECF327298E08970049CFE4 /* RunningSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF326298E08970049CFE4 /* RunningSession.swift */; };
 		EEECF32B298E0BA00049CFE4 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF32A298E0BA00049CFE4 /* ChallengeService.swift */; };
 		EEECF32D298E12070049CFE4 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF32C298E12070049CFE4 /* DateUtil.swift */; };
+		EEECF32F298E39980049CFE4 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF32E298E39980049CFE4 /* CalendarView.swift */; };
 		EEEDDCD229598E090047F3BB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEDDCD129598E090047F3BB /* SearchView.swift */; };
 		EEF14A892984E7F600368DE1 /* CrewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A882984E7F600368DE1 /* CrewRepository.swift */; };
 		EEF14A8B2984ED7200368DE1 /* Encodable+asDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */; };
@@ -192,9 +191,7 @@
 		EE5339A22978C8FB00CDB5A5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		EE5339A42978CF9C00CDB5A5 /* UIVIewController+CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+CustomAlert.swift"; sourceTree = "<group>"; };
 		EE57A499297CCC6100051DBB /* MatchingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingRepository.swift; sourceTree = "<group>"; };
-		EE60238429405FC300472CD2 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
 		EE6023872940684400472CD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EE602389294080B100472CD2 /* BoardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewModel.swift; sourceTree = "<group>"; };
 		EE60238B2940870B00472CD2 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		EE60FB192974C84D004F82E2 /* AnyTransition+SlideInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+SlideInOut.swift"; sourceTree = "<group>"; };
 		EE6C51792949558700028754 /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
@@ -239,6 +236,7 @@
 		EEECF326298E08970049CFE4 /* RunningSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningSession.swift; sourceTree = "<group>"; };
 		EEECF32A298E0BA00049CFE4 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		EEECF32C298E12070049CFE4 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		EEECF32E298E39980049CFE4 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		EEEDDCD129598E090047F3BB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EEF14A882984E7F600368DE1 /* CrewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewRepository.swift; sourceTree = "<group>"; };
 		EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+asDictionary.swift"; sourceTree = "<group>"; };
@@ -560,8 +558,6 @@
 				EECE28D32984B6E800E2F566 /* CrewList */,
 				EE48C3712982DA12004D594A /* CrewDetail */,
 				EE48C3702982DA01004D594A /* NewCrew */,
-				EE60238429405FC300472CD2 /* BoardListView.swift */,
-				EE602389294080B100472CD2 /* BoardListViewModel.swift */,
 				EE48C36E2982D096004D594A /* CustomTextField.swift */,
 			);
 			path = Crew;
@@ -598,6 +594,7 @@
 				EE48C3682982CC87004D594A /* CustomAlertModifier.swift */,
 				EE48C36A2982CCB0004D594A /* CustomAlert.swift */,
 				EEF1FEA7298D2801001EC5E8 /* RunProgressBarView.swift */,
+				EEECF32E298E39980049CFE4 /* CalendarView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -991,8 +988,8 @@
 				EE2E1A6929620240009F4F33 /* SearchViewModel.swift in Sources */,
 				EEF14A8D2984EF3A00368DE1 /* CrewService.swift in Sources */,
 				EED2EBC0297E7ABF0093801F /* PagingTabView.swift in Sources */,
-				EE60238529405FC300472CD2 /* BoardListView.swift in Sources */,
 				EED2EBAF297E59800093801F /* NavigationUtil.swift in Sources */,
+				EEECF32F298E39980049CFE4 /* CalendarView.swift in Sources */,
 				EEF4491D2966D37E0014687E /* ClientQuizView.swift in Sources */,
 				EEDC2F7C297EF0E600719E9A /* RecentButtonCellView.swift in Sources */,
 				EEF1FEAF298D3BAF001EC5E8 /* TimeOutModalView.swift in Sources */,
@@ -1039,7 +1036,6 @@
 				EE60FB1A2974C84D004F82E2 /* AnyTransition+SlideInOut.swift in Sources */,
 				EECE28D22984B64B00E2F566 /* CrewListView.swift in Sources */,
 				EE53399B2978BB1F00CDB5A5 /* Energy.swift in Sources */,
-				EE60238A294080B100472CD2 /* BoardListViewModel.swift in Sources */,
 				EE1288A529842D480048152A /* CrewPlayerCellView.swift in Sources */,
 				EEF449192966CEF80014687E /* TimerView.swift in Sources */,
 				EE6C517A2949558700028754 /* RingShape.swift in Sources */,

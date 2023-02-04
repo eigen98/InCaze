@@ -11,6 +11,7 @@ struct ChallengeStartView: View {
     var width = UserManager.shared.deviceWidth
     var targetDistance : Double
     var targetTime : Int
+    var stage : String = "0-1"
     @State private var distance: Double = 0.0
     @State private var pace: Double = 0.0
     @State private var time: Double = 0.0
@@ -117,23 +118,33 @@ struct ChallengeStartView: View {
                    showTimeOutRunModal()
                }
                
-               // Update distance and pace based on elapsed time
            }
+          
            .background(.black)
        }
     
-    
+    //완주 실패
     func showTimeOutRunModal(){
+        //서버 반영
+        viewModel.endRace(stage: "\(stage)", isSuccess: false)
         
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
             TimeOutModalView()
+                .onDisappear{
+                    NavigationUtil.popToRootView()
+                }
         }
     }
-    
+    //경기 종료
     func showEndRunModal(){
+        //서버 반영
+        viewModel.endRace(stage: "\(stage)", isSuccess: true)
         
         self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
             ClearModalView()
+                .onDisappear{
+                    NavigationUtil.popToRootView()
+                }
         }
     }
     

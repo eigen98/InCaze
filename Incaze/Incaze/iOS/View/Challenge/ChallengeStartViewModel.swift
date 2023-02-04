@@ -15,6 +15,8 @@ class ChallengeStartViewModel:ObservableObject{
     //service
     var locationService = LocationService()
     var runService = RunService()
+    var challengeService = ChallengeServiceImpl(userInfoRepo: UserInfoRepositoryImpl(),
+                                                crewRepo: CrewRepositoryImpl())
     
     
     typealias ValueUnitPair = (value: String, units: String)
@@ -28,6 +30,7 @@ class ChallengeStartViewModel:ObservableObject{
     
     //연결 해두고 원하는 시점에 이벤트를 보냄
     var distanceSubject =  PassthroughSubject<Double, Never>()
+    var progressEndSubject = CurrentValueSubject<Bool,Never>(false)
     
     func startRace(){
         locationService.ready()
@@ -36,6 +39,30 @@ class ChallengeStartViewModel:ObservableObject{
         runService.start()
         
         observerDistance()
+    }
+    /*
+     종료
+     */
+    func endRace(stage: String, isSuccess: Bool){
+        saveResult(stage: stage, isSuccess: isSuccess)
+    }
+    /*
+     결과 서버 반영
+     */
+    func saveResult(stage : String, isSuccess : Bool){
+        challengeService.postChallengeResult(result: RunningSession(stage: stage,
+                                                                    isCompleted: isSuccess,
+                                                                    date: startDate,
+                                                                    distance: distance,
+                                                                    duration: duration,
+                                                                    pace: pace,
+                                                                    caloriesBurned: caloriesBurned))
+        .sink(receiveCompletion: {_ in
+            
+        }, receiveValue: {_ in
+            print("챌린지 결과 업로드 완료")
+        })
+        .store(in: &bag)
     }
     
     /*

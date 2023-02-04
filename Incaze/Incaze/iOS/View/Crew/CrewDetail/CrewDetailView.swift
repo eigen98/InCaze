@@ -11,7 +11,7 @@ struct CrewDetailView: View {
     
     @StateObject var viewModel : CrewDetailViewModel// = CrewDetailViewModel(service: CrewServiceServiceImpl(crewRepo: CrewRepositoryImpl()))
     @State private var crewInfo : CrewModel? = nil
-    @State var buttonText = ""
+    @State var buttonText = "수정"
     var body: some View {
         ScrollView{
             
