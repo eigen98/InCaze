@@ -20,7 +20,7 @@ struct MyPageView: View {
             
             VStack{
                 
-                //MARK: 오늘 운동 수치 타이틀
+                //MARK: title
                 ZStack{
                     RoundedRectangle(cornerRadius: 16)
                         .fill(Color.white)
