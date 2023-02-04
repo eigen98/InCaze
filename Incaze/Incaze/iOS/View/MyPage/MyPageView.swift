@@ -20,11 +20,26 @@ struct MyPageView: View {
             
             VStack{
                 
+                //MARK: 오늘 운동 수치 타이틀
+                ZStack{
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white)
+                                   .frame(width: 200, height: 44)
+                                   .overlay(
+                                       RoundedRectangle(cornerRadius: 16)
+                                           .stroke(lineWidth: 3)
+                                           .foregroundColor(.black)
+                                   )
+                    
+                    Text("\(myname) Profile")
+                        .foregroundColor(.black)
+                        .font(.system(size: 16, weight: .bold))
+                        .frame(width: 180)
+                        
+                }
+                
                 //캐릭터 선택
                 VStack{
-                    Text("\(myname)")
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(.white)
                     
                     
                     ZStack{
@@ -109,14 +124,208 @@ struct MyPageView: View {
                 
                 
                 
+                //MARK: 오늘 운동 수치 뷰
+                VStack{
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color(red: 39/255, green: 38/255, blue: 70/255))
+                                       .frame(width: deviceWidth - 40, height: 200)
+                                       .overlay(
+                                           RoundedRectangle(cornerRadius: 20)
+                                               .stroke(lineWidth: 3)
+                                               .foregroundColor(.black)
+                                       )
+                        
+                        VStack{
+                            
+                            //MARK: 칼로리 뷰
+                            HStack{
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.red)
+                                                   .frame(width: 46, height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    
+                                    Text("Cal")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 16, weight: .bold))
+                                        
+                                }
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.clear)
+                                                   .frame( height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    HStack{
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.red)
+                                                       .frame(width: 100, height: 42)
+                                                       .overlay(
+                                                           RoundedRectangle(cornerRadius: 20)
+                                                               .stroke(lineWidth: 0)
+                                                               .foregroundColor(.black)
+                                                       )
+                                                       .padding(.leading, 2)
+                                        Spacer()
+                                    }
+                                    
+                                    
+                                    Text("444/666")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20, weight: .bold))
+                                        
+                                }
+                                
+                                
+                            }
+                            
+                            
+                            
+                            //MARK: 운동시간 뷰
+                            HStack{
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.green)
+                                                   .frame(width: 46, height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    
+                                    Text("Time")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 16, weight: .bold))
+                                        
+                                }
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                                   .fill(Color.clear)
+                                                   .frame( height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    HStack{
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.green)
+                                                       .frame(width: 100, height: 42)
+                                                       .overlay(
+                                                           RoundedRectangle(cornerRadius: 20)
+                                                               .stroke(lineWidth: 0)
+                                                               .foregroundColor(.black)
+                                                       )
+                                                       .padding(.leading, 2)
+                                        Spacer()
+                                    }
+                                    
+                                    
+                                    Text("30분/60분")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20, weight: .bold))
+                                        
+                                }
+                                
+                                
+                            }
+                            
+                            //MARK: 거리 뷰
+                            HStack{
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.yellow)
+                                                   .frame(width: 46, height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    
+                                    Text("Dis")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20, weight: .bold))
+                                        
+                                }
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 20)
+                                                   .fill(Color.clear)
+                                                   .frame( height: 46)
+                                                   .overlay(
+                                                       RoundedRectangle(cornerRadius: 20)
+                                                           .stroke(lineWidth: 3)
+                                                           .foregroundColor(.black)
+                                                   )
+                                    HStack{
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.yellow)
+                                                       .frame(width: 100, height: 42)
+                                                       .overlay(
+                                                           RoundedRectangle(cornerRadius: 20)
+                                                               .stroke(lineWidth: 0)
+                                                               .foregroundColor(.black)
+                                                       )
+                                                       .padding(.leading, 2)
+                                        Spacer()
+                                    }
+                                    
+                                    
+                                    Text("3.68KM")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20, weight: .bold))
+                                        
+                                }
+                                
+                                
+                            }
+                            
+                        }.frame(width: deviceWidth - 64, height: 300)
+                    }
+                    
+                    //MARK: 오늘 운동 수치 타이틀
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.white)
+                                       .frame(width: 180, height: 44)
+                                       .overlay(
+                                           RoundedRectangle(cornerRadius: 20)
+                                               .stroke(lineWidth: 3)
+                                               .foregroundColor(.black)
+                                       )
+                        
+                        Text("Today Activity")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16, weight: .bold))
+                            
+                    }
+                    .offset(y:-290)
+                    
                 
+                }
+                
+                
+
                 //내 정보
                 VStack{
                     RecentButtonCellView()
                     LocationInfoCellView()
                     TermsOfUseCellView()
                 }
-                .padding(.top, 32)
+                .offset(y:-100)
              
             }
         }
