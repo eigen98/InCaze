@@ -52,7 +52,7 @@ class ChallengeStartViewModel:ObservableObject{
     func saveResult(stage : String, isSuccess : Bool){
         challengeService.postChallengeResult(result: RunningSession(stage: stage,
                                                                     isCompleted: isSuccess,
-                                                                    date: startDate,
+                                                                    date: startDate.toString(),
                                                                     distance: distance,
                                                                     duration: duration,
                                                                     pace: pace,
@@ -84,10 +84,11 @@ class ChallengeStartViewModel:ObservableObject{
                 print("now distance : \(value)")
                 var result = value
                 
-                result.removeLast(3)
-                let distanceDouble =  Double("\(result.removeLast(2))") ?? 0.0
+                result.removeLast(2)
+                print("now result : \(result)")
+                let distanceDouble =  Double("\(result)") ?? 0.2
                 self?.distance = distanceDouble
-                self?.duration = self?.getDuration() ?? 0.0
+                self?.duration = self?.getDuration() ?? 0.2
                 self?.pace = self?.getPace(distance: distanceDouble) ?? 0.0
                 
                 self?.caloriesBurned = self?.getCaloriesBurned(distance: distanceDouble, duration: self?.getDuration() ?? 0.0) ?? 0

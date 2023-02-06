@@ -16,6 +16,7 @@
 		EE14866C295DD4750034F939 /* EarthAnimationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE14866B295DD4750034F939 /* EarthAnimationCode.swift */; };
 		EE14866E295DD5150034F939 /* TwoPlayerRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE14866D295DD5150034F939 /* TwoPlayerRunningView.swift */; };
 		EE28058729799861007F0ADF /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28058629799860007F0ADF /* ClockView.swift */; };
+		EE2D730F298EAC0500A31D23 /* RecentRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D730E298EAC0500A31D23 /* RecentRecordView.swift */; };
 		EE2E1A5C2961EBAC009F4F33 /* IncazeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E1A5B2961EBAC009F4F33 /* IncazeWatchApp.swift */; };
 		EE2E1A5E2961EBAC009F4F33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E1A5D2961EBAC009F4F33 /* ContentView.swift */; };
 		EE2E1A602961EBAE009F4F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2E1A5F2961EBAE009F4F33 /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		EEDF747C2980EE6B00AC6BDB /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = EEDF747B2980EE6B00AC6BDB /* Fire.json */; };
 		EEE14185297E9BE000EAB656 /* JeepCar.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE14184297E9BE000EAB656 /* JeepCar.json */; };
 		EEE2A4EF2941B0810050B91E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEE2A4EE2941B0810050B91E /* KeychainSwift */; };
+		EEE301892990B05800195720 /* String+toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE301882990B05800195720 /* String+toDate.swift */; };
 		EEECF327298E08970049CFE4 /* RunningSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF326298E08970049CFE4 /* RunningSession.swift */; };
 		EEECF32B298E0BA00049CFE4 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF32A298E0BA00049CFE4 /* ChallengeService.swift */; };
 		EEECF32D298E12070049CFE4 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEECF32C298E12070049CFE4 /* DateUtil.swift */; };
@@ -146,6 +148,7 @@
 		EE14866B295DD4750034F939 /* EarthAnimationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthAnimationCode.swift; sourceTree = "<group>"; };
 		EE14866D295DD5150034F939 /* TwoPlayerRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerRunningView.swift; sourceTree = "<group>"; };
 		EE28058629799860007F0ADF /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		EE2D730E298EAC0500A31D23 /* RecentRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentRecordView.swift; sourceTree = "<group>"; };
 		EE2E1A592961EBAC009F4F33 /* IncazeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IncazeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2E1A5B2961EBAC009F4F33 /* IncazeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncazeWatchApp.swift; sourceTree = "<group>"; };
 		EE2E1A5D2961EBAC009F4F33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -233,6 +236,7 @@
 		EEDF74792980ED8300AC6BDB /* jewel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jewel.json; sourceTree = "<group>"; };
 		EEDF747B2980EE6B00AC6BDB /* Fire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire.json; sourceTree = "<group>"; };
 		EEE14184297E9BE000EAB656 /* JeepCar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JeepCar.json; sourceTree = "<group>"; };
+		EEE301882990B05800195720 /* String+toDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDate.swift"; sourceTree = "<group>"; };
 		EEECF326298E08970049CFE4 /* RunningSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningSession.swift; sourceTree = "<group>"; };
 		EEECF32A298E0BA00049CFE4 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		EEECF32C298E12070049CFE4 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 		EE6023862940683A00472CD2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EEE301872990AF3B00195720 /* Running */,
 				EE6023872940684400472CD2 /* User.swift */,
 				EE60238B2940870B00472CD2 /* Room.swift */,
 				EE5339962978BAD700CDB5A5 /* Parameters.swift */,
@@ -670,6 +675,7 @@
 				EE01AA37297967E600856C26 /* Binding+.swift */,
 				EEFAAFAE297B9847006AD71B /* DatabaseReference+ToAnyPublisher.swift */,
 				EEF14A8A2984ED7200368DE1 /* Encodable+asDictionary.swift */,
+				EEE301882990B05800195720 /* String+toDate.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -702,6 +708,7 @@
 				EED2EBBD297E6EE30093801F /* MyPageView.swift */,
 				EED2EBBF297E7ABF0093801F /* PagingTabView.swift */,
 				EED6A374298CB85700158261 /* MyPageViewModel.swift */,
+				EE2D730E298EAC0500A31D23 /* RecentRecordView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -741,6 +748,13 @@
 				EE9C56B429801AA8006F36ED /* TermsOfUseCellView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EEE301872990AF3B00195720 /* Running */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Running;
 			sourceTree = "<group>";
 		};
 		EEE90E922976B58E00157A29 /* Practice */ = {
@@ -977,6 +991,7 @@
 				EED2EBBE297E6EE30093801F /* MyPageView.swift in Sources */,
 				EEF36CB4298DE05600CF2412 /* ChallengeStartViewModel.swift in Sources */,
 				EE7CFA8B298BFF5D00AB7530 /* OtherProfileView.swift in Sources */,
+				EE2D730F298EAC0500A31D23 /* RecentRecordView.swift in Sources */,
 				EE28058729799861007F0ADF /* ClockView.swift in Sources */,
 				EEF1FEB1298D3C02001EC5E8 /* ClearModalView.swift in Sources */,
 				EEF449152966CEEE0014687E /* QuizAnswerButtonView.swift in Sources */,
@@ -1035,6 +1050,7 @@
 				EE01AA38297967E600856C26 /* Binding+.swift in Sources */,
 				EE60FB1A2974C84D004F82E2 /* AnyTransition+SlideInOut.swift in Sources */,
 				EECE28D22984B64B00E2F566 /* CrewListView.swift in Sources */,
+				EEE301892990B05800195720 /* String+toDate.swift in Sources */,
 				EE53399B2978BB1F00CDB5A5 /* Energy.swift in Sources */,
 				EE1288A529842D480048152A /* CrewPlayerCellView.swift in Sources */,
 				EEF449192966CEF80014687E /* TimerView.swift in Sources */,
